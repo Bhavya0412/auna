@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-
+import Header from './components/Header';
+import Navbar from './components/Navbar';
 
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
 
   return (
     <>
+    <Header />
+    <Navbar />
     <BrowserRouter>
       <RoutesWeb />
     </BrowserRouter>

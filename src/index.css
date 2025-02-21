@@ -2,6 +2,12 @@
   font-family: 'Blackjack';
   src: url('./fonts/Sacramento-Regular.ttf') format('truetype');
 }
+@font-face {
+  font-family: "The Seasons";
+  src: url("./fonts/the-seasons-regular.ttf") format("truetype");
+}
+
+
 
 @tailwind base;
 @tailwind components;

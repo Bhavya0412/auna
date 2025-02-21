@@ -7,8 +7,18 @@ module.exports = {
     extend: {
       fontFamily: {
         blackjack: ["Blackjack", "cursive"],
+        theSeasons: ["'The Seasons'", "serif"], // Assuming this is from Demo_Fonts
+      },
+      colors: {
+        white: "#FFFFFF",
+        beige: "#F5F5DC",
+        coffeeTan: "#D2B48C",
+        coffeeDeep: "#8B5A2B",
+        oliveGreen: "#3C4C24",
+        cream: "#FAF3E0",
+        darkolivegreen: "#5C6147",
       },
     },
   },
   plugins: [],
-}
+};
