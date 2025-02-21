@@ -1,35 +1,31 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Header from './components/Header';
 import Navbar from './components/Navbar';
+import HomeCards from './pages/Home';
+import Footer from './components/Footer';
 
 
-function App() {
-
-
-
+const App = () => {
   return (
-    <>
-    <Header />
-    <Navbar />
-    <BrowserRouter>
-      <RoutesWeb />
-    </BrowserRouter>
-    </>
-  );
-}
+    <Router>
+      <div className="bg-white dark:bg-darkBg min-h-screen">
 
-const RoutesWeb = () => {
-  const location = useLocation(); // Get the current route
+      <Header />
+      <Navbar />
 
-  return (
-      <>
-      {/* {loading && <Loader />} */}
-      <Routes>
-      </Routes>
-      {/* {!isAdminRoute && <Footer />}       Conditionally render Footer */}
-      </>
+        <Routes>
+          <Route path="/" element={<HomeCards />} />
+
+          {/* Future routes for other pages can be added here */}
+        </Routes>
+      
+      
+      </div>
+      <Footer />
+    </Router>
   );
 };
 
-export default App;
+export default App;

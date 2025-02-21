@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="w-full bg-cream py-6 px-8 shadow-sm">
+    <header className="w-full bg-white py-6 px-8 shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <nav className="flex space-x-12 w-1/3">
           <a href="#" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
