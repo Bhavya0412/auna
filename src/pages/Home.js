@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useNavigate } from "react-router-dom"; // for navigation
 
-const ProductCard = ({ id, name, description, display_price, img_path, isReversed, index }) => {
+const ProductCard = ({ id, name, description, display_price, og_price, img_path, isReversed, index }) => {
   const controls = useAnimation();
   const navigate = useNavigate(); // for navigation
 
@@ -72,12 +72,15 @@ const ProductCard = ({ id, name, description, display_price, img_path, isReverse
         </motion.h3>
         <div className="w-16 h-1 bg-oliveGreen mb-4"></div>
         <p className="text-darkolivegreen mb-6">{description}</p>
+        <span className="text-xl font-semibold text-mochaBrown line-through opacity-60 mb-2">
+            ₹{(og_price).toFixed(2)} {"\n"}
+          </span>
         <motion.div 
           className="flex items-center"
           whileHover={{ x: 10 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="text-xl font-semibold text-mochaBrown mr-4">${(display_price / 100).toFixed(2)}</span>
+          <span className="text-xl font-semibold text-mochaBrown mr-4">₹{(display_price).toFixed(2)}</span>
           <motion.button 
             className="px-6 py-2 bg-oliveGreen text-white rounded hover:bg-darkolivegreen transition-colors duration-300"
             onClick={() => openProductPage(id)}
@@ -178,6 +181,7 @@ const Home = () => {
               name={product.name}
               description={product.description}
               display_price={product.display_price}
+              og_price={product.og_price}
               img_path={product.img_path}
               isReversed={index % 2 !== 0}
               index={index}

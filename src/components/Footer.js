@@ -49,9 +49,9 @@ const Footer = () => {
         <div className="md:col-span-1">
           <h3 className="text-lg font-bold mb-2">Shop</h3>
           <ul className="space-y-1">
-            <li><a href="#" className="hover:text-white transition-colors">New Arrivals</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Best Sellers</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Collections</a></li>
+            <li><a href="/" className="hover:text-white transition-colors">New Arrivals</a></li>
+            <li><a href="/" className="hover:text-white transition-colors">Best Sellers</a></li>
+            <li><a href="/" className="hover:text-white transition-colors">Collections</a></li>
           </ul>
         </div>
 
