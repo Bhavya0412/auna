@@ -15,6 +15,8 @@ import FAQsPage from './pages/Faqs';
 import ProductPage from "./pages/ProductPage";
 import About from './pages/About';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 const App = () => {
   return (
@@ -32,6 +34,8 @@ const App = () => {
         <Routes>
 
           <Route path="/" element={<HomeCards />} />
+          <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+          <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/About" element={<About />} />
           <Route path="/Faqs" element={<FAQsPage />} />

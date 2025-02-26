@@ -89,8 +89,8 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto mt-6 pt-4 border-t border-cream/20 text-center text-sm">
         <p>© {currentYear} Auna. All rights reserved.</p>
         <div className="mt-1 space-x-4">
-          <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          <a href="/PrivacyPolicy" className="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/TermsAndConditions" className="hover:text-white transition-colors">Terms and Conditions</a>
         </div>
       </div>
     </footer>
