@@ -1,13 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from "react-router-dom"; // for navigation
 
-const ProductCard = ({ title, description, price, imageUrl, isReversed, index }) => {
+const ProductCard = ({ id, name, description, display_price, img_path, isReversed, index }) => {
   const controls = useAnimation();
+  const navigate = useNavigate(); // for navigation
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
+
+  const openProductPage = (productId) => {
+    navigate(`/The-Coffee-Arc/product/${productId}`);
+  };
 
   useEffect(() => {
     if (inView) {
@@ -49,8 +56,8 @@ const ProductCard = ({ title, description, price, imageUrl, isReversed, index })
         transition={{ duration: 0.3 }}
       >
         <img 
-          src={imageUrl} 
-          alt={title} 
+          src={img_path} 
+          alt={name} 
           className="w-full h-full object-cover object-center"
         />
       </motion.div>
@@ -61,7 +68,7 @@ const ProductCard = ({ title, description, price, imageUrl, isReversed, index })
           whileHover={{ scale: 1.05, color: '#5C6147' }}
           transition={{ duration: 0.2 }}
         >
-          {title}
+          {name}
         </motion.h3>
         <div className="w-16 h-1 bg-oliveGreen mb-4"></div>
         <p className="text-darkolivegreen mb-6">{description}</p>
@@ -70,9 +77,10 @@ const ProductCard = ({ title, description, price, imageUrl, isReversed, index })
           whileHover={{ x: 10 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="text-xl font-semibold text-mochaBrown mr-4">${price}</span>
+          <span className="text-xl font-semibold text-mochaBrown mr-4">${(display_price / 100).toFixed(2)}</span>
           <motion.button 
             className="px-6 py-2 bg-oliveGreen text-white rounded hover:bg-darkolivegreen transition-colors duration-300"
+            onClick={() => openProductPage(id)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -122,29 +130,24 @@ const Hero = () => {
 };
 
 const Home = () => {
-  const products = [
-    {
-      id: 1,
-      title: "The Meridian Tote",
-      description: "A spacious, elegant tote bag perfect for daily use. Crafted with premium materials and attention to detail, it combines style with functionality.",
-      price: "189.99",
-      imageUrl: "https://cdn-icons-png.flaticon.com/256/11899/11899150.png"
-    },
-    {
-      id: 2,
-      title: "Eden Crossbody",
-      description: "Our most versatile crossbody bag, designed for the woman on the move. Compact yet surprisingly spacious with multiple compartments.",
-      price: "149.99",
-      imageUrl: "https://cdn-icons-png.flaticon.com/256/11899/11899150.png"
-    },
-    {
-      id: 3,
-      title: "The Aria Clutch",
-      description: "An exquisite evening clutch with subtle detailing. The perfect companion for special occasions when you want to make a statement.",
-      price: "129.99",
-      imageUrl: "https://cdn-icons-png.flaticon.com/256/11899/11899150.png"
-    }
-  ];
+  const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    // Fetch the product data from the JSON file
+    fetch('/data/Product.json')
+      .then(response => response.json())
+      .then(data => {
+        if (data.the_coffee_arc && Array.isArray(data.the_coffee_arc)) {
+          setProducts(data.the_coffee_arc);
+        } else {
+          console.error('Invalid data format in Product.json');
+        }
+      })
+      .catch(error => {
+        console.error('Error loading product data:', error);
+      });
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -171,10 +174,11 @@ const Home = () => {
           {products.map((product, index) => (
             <ProductCard
               key={product.id}
-              title={product.title}
+              id={product.id}
+              name={product.name}
               description={product.description}
-              price={product.price}
-              imageUrl={product.imageUrl}
+              display_price={product.display_price}
+              img_path={product.img_path}
               isReversed={index % 2 !== 0}
               index={index}
             />

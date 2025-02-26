@@ -1,0 +1,58 @@
+{
+    "the_coffee_arc" : [
+        {
+            "id": "tca01",
+            "name": "The Latte",
+            "og_price": 1499,
+            "display_price": 999,
+            "description": "purse wow",
+            "product_detail": "this is a lattee colur purse pls chande the tsdec tioan .",
+            "img_path": "/assets/the-coffee-arc/auna_purse.jpg",
+            "additional_images": [
+              "/assets/bestseller/bsdc2.jpg",
+              "/assets/bestseller/bsdc3.jpg",
+              "/assets/bestseller/bsdc4.jpg",
+              "/assets/bestseller/bsdc5.jpg"
+            ],
+            "fabric": "faux leather",
+            "size": "28 x 8 x 38",
+            "additional_details": "details"
+          },
+          {
+            "id": "tca02",
+            "name": "The mocha",
+            "og_price": 1499,
+            "display_price": 999,
+            "description": "purse wow",
+            "product_detail": "this is a lattee colur purse pls chande the tsdec tioan .",
+            "img_path": "/assets/bestseller/bsdcs1.jpg",
+            "additional_images": [
+              "/assets/bestseller/bsdc2.jpg",
+              "/assets/bestseller/bsdc3.jpg",
+              "/assets/bestseller/bsdc4.jpg",
+              "/assets/bestseller/bsdc5.jpg"
+            ],
+            "fabric": "faux leather",
+            "size": "28 x 8 x 38",
+            "additional_details": "details"
+          },
+          {
+            "id": "tca03",
+            "name": "The expresso",
+            "og_price": 1499,
+            "display_price": 999,
+            "description": "purse wow",
+            "product_detail": "this is a lattee colur purse pls chande the tsdec tioan .",
+            "img_path": "/assets/bestseller/bsdcs1.jpg",
+            "additional_images": [
+              "/assets/bestseller/bsdc2.jpg",
+              "/assets/bestseller/bsdc3.jpg",
+              "/assets/bestseller/bsdc4.jpg",
+              "/assets/bestseller/bsdc5.jpg"
+            ],
+            "fabric": "faux leather",
+            "size": "28 x 8 x 38",
+            "additional_details": "details"
+          }
+    ]
+}
