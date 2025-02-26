@@ -15,7 +15,7 @@ const Header = () => {
 
         <div className="flex items-center justify-center w-1/3">
           <h1 className="font-theSeasons text-5xl font-bold tracking-widest text-oliveGreen text-center">
-            AUNA
+            Auna
           </h1>
         </div>
         

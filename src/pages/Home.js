@@ -108,49 +108,15 @@ const Hero = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.8 }
-    }
-  };
-
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={controls}
       variants={heroVariants}
-      className="bg-gradient-to-r from-white to-white py-8 px-4 md:px-8 mb-4"
+      className="bg-gradient-to-r from-white to-white py-2 px-4 md:px-8 mb-0"
     >
-      <div className="max-w-6xl mx-auto text-center">
-        {/* <motion.h1 
-          variants={itemVariants}
-          className="text-4xl md:text-6xl font-bold text-coffeeDeep mb-6"
-        >
-          AUNA
-        </motion.h1>
-        <motion.div 
-          variants={itemVariants}
-          className="w-24 h-1 bg-oliveGreen mx-auto mb-6"
-        ></motion.div> */}
-        {/* <motion.p 
-          variants={itemVariants}
-          className="text-lg md:text-2xl text-mochaBrown mb-0 w-2xl mx-auto"
-        >
-          Elegance in every stitch. Discover our handcrafted purses designed for the modern woman.
-        </motion.p> */}
-        {/* <motion.button
-          variants={itemVariants}
-          className="px-8 py-3 bg-oliveGreen text-white rounded-md text-lg hover:bg-darkolivegreen transition-colors duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Shop Collection
-        </motion.button> */}
-      </div>
+      <div className="max-w-7xl mx-auto text-center"></div>
     </motion.div>
   );
 };
@@ -184,20 +150,24 @@ const Home = () => {
     <div className="min-h-screen bg-white">
       <Hero />
       
-      <div className="container mx-auto px-4 py-2">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl font-bold text-center text-coffeeDeep mb-2"
-        >
-          Our Signature Collection
-        </motion.h2>
-        <motion.div 
-          className="w-24 h-1 bg-oliveGreen mx-auto mb-6"
-        ></motion.div> 
+      <div className="max-w-7xl mx-auto px-4 py-0 mt-2">
+        <div className="flex justify-center items-center">
+          <div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl font-['Cormorant Garamond'] font-bold text-center text-coffeeDeep mb-0 mt-2"
+            >
+              Our Signature Collection
+            </motion.h2>
+            <motion.div 
+              className="w-24 h-1 bg-oliveGreen mx-auto mb-10 mt-4"
+            ></motion.div>
+          </div>
+        </div>
         
-        <div className="space-y-24 mb-8">
+        <div className="space-y-24 mb-6">
           {products.map((product, index) => (
             <ProductCard
               key={product.id}
@@ -211,8 +181,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-      
-      {/* Footer section removed as requested */}
     </div>
   );
 };
