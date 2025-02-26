@@ -16,6 +16,7 @@
     "react-intersection-observer": "^9.15.1",
     "react-router-dom": "^6.29.0",
     "react-scripts": "5.0.1",
+    "react-scroll-to-top": "^3.0.0",
     "tailwind-merge": "^2.5.4",
     "web-vitals": "^2.1.4"
   },

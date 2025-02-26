@@ -1,5 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollerOnTop from "./ScrollerOnTop";
+import ScrollToTop from "react-scroll-to-top";
+
+
 
 import Header from './components/Header';
 import Navbar from './components/Navbar';
@@ -13,12 +17,16 @@ import ProductPage from "./pages/ProductPage";
 const App = () => {
   return (
     <Router>
+      <ScrollerOnTop />
+      <ScrollToTop smooth color="#5D3A6B" />
+
       <div className="bg-white dark:bg-darkBg min-h-screen">
 
       <Header />
       <Navbar />
 
         <Routes>
+
           <Route path="/" element={<HomeCards />} />
           <Route path="/Faqs" element={<FAQsPage />} />
           <Route path="/Care_instructions" element={<CareInstructionsPage />} />
