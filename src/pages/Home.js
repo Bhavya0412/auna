@@ -134,7 +134,7 @@ const Hero = () => {
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   
   useEffect(() => {
     // Fetch the product data from the JSON file

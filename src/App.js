@@ -13,13 +13,17 @@ import ShippingPoliciesPage from './pages/Shipping';
 import CareInstructionsPage from './pages/Care';
 import FAQsPage from './pages/Faqs';
 import ProductPage from "./pages/ProductPage";
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 const App = () => {
   return (
     <Router>
       <ScrollerOnTop />
-      <ScrollToTop smooth color="#5D3A6B" />
-
+      <ScrollToTop
+  smooth
+  className="flex items-center justify-center bg-coffeeDeep text-white rounded-full shadow-md hover:bg-darkolivegreen"
+/>
       <div className="bg-white dark:bg-darkBg min-h-screen">
 
       <Header />
@@ -28,6 +32,8 @@ const App = () => {
         <Routes>
 
           <Route path="/" element={<HomeCards />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/About" element={<About />} />
           <Route path="/Faqs" element={<FAQsPage />} />
           <Route path="/Care_instructions" element={<CareInstructionsPage />} />
           <Route path="/shipping_policies" element={<ShippingPoliciesPage />} />

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShareAlt, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 
 const ProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [wishlist, setWishlist] = useState(false);
+  // const [wishlist, setWishlist] = useState(false);
 
   useEffect(() => {
     // Simulate fetching product data
@@ -79,20 +79,20 @@ I found this on the Auna website and would love to know more details.`;
   
     navigator.clipboard.writeText(message).then(() => {
       alert("Message copied! Now paste it in Instagram chat.");
-      window.open("https://www.instagram.com/direct/t/17849702420955391", "_blank");
+      window.open("https://www.instagram.com/direct/t/17845145331390942", "_blank");
     });
   };
 
-  const handleQuantityChange = (change) => {
-    const newQuantity = quantity + change;
-    if (newQuantity > 0) {
-      setQuantity(newQuantity);
-    }
-  };
+  // const handleQuantityChange = (change) => {
+  //   const newQuantity = quantity + change;
+  //   if (newQuantity > 0) {
+  //     setQuantity(newQuantity);
+  //   }
+  // };
 
-  const toggleWishlist = () => {
-    setWishlist(!wishlist);
-  };
+  // const toggleWishlist = () => {
+  //   setWishlist(!wishlist);
+  // };
 
   return (
     <section className="py-16 bg-white text-coffeeDeep">

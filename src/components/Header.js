@@ -8,7 +8,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-white py-4 px-4 md:py-6 md:px-8 shadow-sm">
+    <header className="w-full bg-white py-4 px-4 md:py-6 md:px-8 shadow-sm sticky top-0 z-50 shadow-2xl">
       <div className="max-w-7xl mx-auto">
         {/* Mobile Layout */}
         <div className="md:hidden">
@@ -44,10 +44,10 @@ const Header = () => {
               <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 Collections
               </a>
-              <a href="#" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
+              <a href="/About" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 About
               </a>
-              <a href="#" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
+              <a href="/Contact" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 Contact
               </a>
             </nav>
@@ -72,10 +72,10 @@ const Header = () => {
           </div>
           
           <nav className="flex space-x-6 lg:space-x-12 w-1/3 justify-end">
-            <a href="#" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
+            <a href="/About" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
               About
             </a>
-            <a href="#" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
+            <a href="/Contact" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
               Contact
             </a>
           </nav>
