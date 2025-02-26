@@ -23,7 +23,7 @@ const shippingPolicies = [
 const ShippingPoliciesPage = () => {
   return (
     <div className="min-h-screen bg-white text-oliveGreen p-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">Shipping & Returns</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center">Shipping Policies</h1>
       <div className="max-w-3xl mx-auto space-y-6">
         {shippingPolicies.map((policy) => (
           <div key={policy.id} className="bg-oliveGreen text-white p-6 rounded-lg shadow-lg">

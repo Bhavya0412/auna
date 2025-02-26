@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import ShippingPoliciesPage from './pages/Shipping';
 import CareInstructionsPage from './pages/Care';
 import FAQsPage from './pages/Faqs';
+import ProductPage from "./pages/ProductPage";
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
           <Route path="/Faqs" element={<FAQsPage />} />
           <Route path="/Care_instructions" element={<CareInstructionsPage />} />
           <Route path="/shipping_policies" element={<ShippingPoliciesPage />} />
-
+          <Route path="/The-Coffee-Arc/product/:id" element={<ProductPage />} />
           {/* Future routes for other pages can be added here */}
         </Routes>
       
