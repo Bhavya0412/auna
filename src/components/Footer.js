@@ -59,9 +59,9 @@ const Footer = () => {
         <div className="md:col-span-1">
           <h3 className="text-lg font-bold mb-2">Help</h3>
           <ul className="space-y-1">
-            <li><a href="#" className="hover:text-white transition-colors">FAQs</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Shipping & Returns</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Care Instructions</a></li>
+            <li><a href="/Faqs" className="hover:text-white transition-colors">FAQs</a></li>
+            <li><a href="/shipping_policies" className="hover:text-white transition-colors">Shipping Policies</a></li>
+            <li><a href="/Care_instructions" className="hover:text-white transition-colors">Care Instructions</a></li>
           </ul>
         </div>
 
@@ -71,15 +71,15 @@ const Footer = () => {
           <ul className="space-y-2">
             <li className="flex items-center">
               <Mail size={16} className="mr-2" />
-              <a href="mailto:hello@aunapurses.com" className="hover:text-white transition-colors">hello@aunapurses.com</a>
+              <a href="mail to :hello@aunapurses.com" className="hover:text-white transition-colors">hello@aunapurses.com</a>
             </li>
             <li className="flex items-center">
               <Phone size={16} className="mr-2" />
-              <a href="tel:+18005551234" className="hover:text-white transition-colors">+1 (800) 555-1234</a>
+              <a href="Contact:" className="hover:text-white transition-colors">+1 (800) 555-1234</a>
             </li>
             <li className="flex items-start">
               <MapPin size={16} className="mr-2 mt-1" />
-              <span>123 Artisan Way, Craftsville</span>
+              <span>Mumbai</span>
             </li>
           </ul>
         </div>

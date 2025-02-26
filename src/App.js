@@ -5,7 +5,9 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import HomeCards from './pages/Home';
 import Footer from './components/Footer';
-
+import ShippingPoliciesPage from './pages/Shipping';
+import CareInstructionsPage from './pages/Care';
+import FAQsPage from './pages/Faqs';
 
 const App = () => {
   return (
@@ -17,6 +19,9 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<HomeCards />} />
+          <Route path="/Faqs" element={<FAQsPage />} />
+          <Route path="/Care_instructions" element={<CareInstructionsPage />} />
+          <Route path="/shipping_policies" element={<ShippingPoliciesPage />} />
 
           {/* Future routes for other pages can be added here */}
         </Routes>
