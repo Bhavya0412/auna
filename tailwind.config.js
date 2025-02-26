@@ -18,7 +18,6 @@ module.exports = {
         cream: "#FAF3E0",
         darkolivegreen: "#5C6147",
         mochaBrown:"#967969",
-        white:"#FFFFFF",
       },
     },
   },
