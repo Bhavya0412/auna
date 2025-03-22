@@ -7,6 +7,12 @@
   src: url("./fonts/the-seasons-regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'LeJourSerif';
+  src: url('./fonts/Le\ Jour\ Serif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 @tailwind base;

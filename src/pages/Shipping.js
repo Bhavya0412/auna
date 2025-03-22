@@ -22,18 +22,23 @@ const shippingPolicies = [
 
 const ShippingPoliciesPage = () => {
   return (
-    <div className="min-h-screen bg-white text-oliveGreen p-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">Shipping Policies</h1>
-      <div className="max-w-3xl mx-auto space-y-6">
-        {shippingPolicies.map((policy) => (
-          <div key={policy.id} className="bg-oliveGreen text-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-semibold mb-4">{policy.title}</h2>
-            <p className="whitespace-pre-line text-lg mb-4">{policy.description}</p>
-            {policy.cost && (
-              <p className="text-md whitespace-pre-line font-medium">{policy.cost}</p>
-            )}
-          </div>
-        ))}
+    <div className="min-h-screen bg-white text-oliveGreen p-8 flex items-center justify-center">
+      <div className="max-w-3xl w-full">
+        {/* Page Title */}
+        <h1 className="text-5xl font-bold mb-8 text-center">Shipping Policies</h1>
+
+        {/* Shipping Policy Cards */}
+        <div className="space-y-6">
+          {shippingPolicies.map((policy) => (
+            <div key={policy.id} className="bg-[#3E4A26] text-white p-6 rounded-lg shadow-lg">
+              <h2 className="text-2xl font-semibold mb-4">{policy.title}</h2>
+              <p className="whitespace-pre-line text-lg mb-4">{policy.description}</p>
+              {policy.cost && (
+                <p className="text-md whitespace-pre-line font-medium">{policy.cost}</p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

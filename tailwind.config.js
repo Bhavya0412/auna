@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         blackjack: ["Blackjack", "cursive"],
         theSeasons: ["'The Seasons'", "serif"], // Assuming this is from Demo_Fonts
+        lejour: ['LeJourSerif', 'serif'],
       },
       colors: {
         white: "#FFFFFF",
