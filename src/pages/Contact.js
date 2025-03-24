@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', subject: '', message: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -9,9 +9,9 @@ const Contact = () => {
   };
 
   const generateWhatsAppLink = () => {
-    const { name, email, message } = formData;
-    const text = `Hello! My name is ${name}. My email is ${email}. Here is my message: ${message}`;
-    return `https://wa.me/919004127927?text=${encodeURIComponent(text)}`;
+    const { name, subject, message } = formData;
+    const text = `Hello! My name is ${name}. My subject is ${subject}. Here is my message: ${message}`;
+    return `https://wa.me/919967425691?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -35,12 +35,12 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="block text-mochaBrown font-medium mb-2">Email</label>
+            <label className="block text-mochaBrown font-medium mb-2">Subject</label>
             <input 
-              type="email" 
-              name="email" 
-              placeholder="Your Email" 
-              value={formData.email} 
+              type="text" 
+              name="subject" 
+              placeholder="Subject" 
+              value={formData.subject} 
               onChange={handleChange} 
               className="w-full p-3 border-2 border-coffeeTan rounded-lg focus:outline-none focus:ring-2 focus:ring-oliveGreen"
             />

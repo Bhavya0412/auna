@@ -12,7 +12,8 @@ const Footer = () => {
         <div className="md:col-span-1">
           <h3 className="text-xl font-bold mb-3">AUNA</h3>
           <p className="mb-4 text-sm">
-            Crafting timeless elegance through sustainable luxury accessories.
+            Where elegance meets craftsmanship,    
+            Made in India.
           </p>
           <div className="flex space-x-4 mb-4 md:mb-0">
             <motion.a 
@@ -71,11 +72,11 @@ const Footer = () => {
           <ul className="space-y-2">
             <li className="flex items-center">
               <Mail size={16} className="mr-2" />
-              <a href="mail to :hello@aunapurses.com" className="hover:text-white transition-colors">hello@aunapurses.com</a>
+              <a href="mail to :hello@aunapurses.com" className="hover:text-white transition-colors">bagsauna@gmail.com</a>
             </li>
             <li className="flex items-center">
               <Phone size={16} className="mr-2" />
-              <a href="Contact:" className="hover:text-white transition-colors">+1 (800) 555-1234</a>
+              <a href="Contact:" className="hover:text-white transition-colors">+91 9967425691</a>
             </li>
             <li className="flex items-start">
               <MapPin size={16} className="mr-2 mt-1" />

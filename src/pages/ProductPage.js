@@ -124,24 +124,25 @@ I found this on the Auna website and would love to know more details.`;
 
             <p className="mb-6 text-mochaBrown">{product.product_detail}</p>
 
-            {/* Product Specifications */}
-            <div className="bg-beige border border-coffeeTan rounded-lg p-6 mb-8">
-              <h3 className="font-serif text-xl mb-4 text-coffeeDeep border-b border-coffeeTan pb-2">Product Details</h3>
-              <div className="grid grid-cols-1 gap-3">
-                <div className="flex items-center">
-                  <span className="font-medium w-1/3">Material:</span>
-                  <span className="text-mochaBrown">{product.fabric}</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="font-medium w-1/3">Dimensions:</span>
-                  <span className="text-mochaBrown">{product.size} cm</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="font-medium w-1/3">Additional:</span>
-                  <span className="text-mochaBrown">{product.additional_details}</span>
-                </div>
-              </div>
-            </div>
+           {/* Product Specifications */}
+<div className="bg-beige border border-coffeeTan rounded-lg p-6 mb-8">
+  <h3 className="font-serif text-xl mb-4 text-coffeeDeep border-b border-coffeeTan pb-2">Product Details</h3>
+  <div className="grid grid-cols-1 gap-3">
+    <div className="flex">
+      <span className="font-medium w-28 flex-shrink-0">Material:</span>
+      <span className="text-mochaBrown">{product.fabric}</span>
+    </div>
+    <div className="flex">
+      <span className="font-medium w-28 flex-shrink-0">Dimensions:</span>
+      <span className="text-mochaBrown">{product.size} cm</span>
+    </div>
+    <div className="flex">
+      <span className="font-medium w-28 flex-shrink-0">Additional:</span>
+      <span className="text-mochaBrown">{product.additional_details}</span>
+    </div>
+  </div>
+</div>
+
 
             {/* Contact Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">

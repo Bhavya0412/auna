@@ -1,9 +1,7 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import ScrollerOnTop from "./ScrollerOnTop";
 import ScrollToTop from "react-scroll-to-top";
-
-
 
 import Header from './components/Header';
 import Navbar from './components/Navbar';
@@ -23,33 +21,38 @@ const App = () => {
     <Router>
       <ScrollerOnTop />
       <ScrollToTop
-  smooth
-  className="flex items-center justify-center bg-coffeeDeep text-white rounded-full shadow-md hover:bg-darkolivegreen"
-/>
-      <div className="bg-white dark:bg-darkBg min-h-screen">
-
-      <Header />
-      <Navbar />
-
-        <Routes>
-
-          <Route path="/" element={<HomeCards />} />
-          <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
-          <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Faqs" element={<FAQsPage />} />
-          <Route path="/Care_instructions" element={<CareInstructionsPage />} />
-          <Route path="/shipping_policies" element={<ShippingPoliciesPage />} />
-          <Route path="/The-Coffee-Arc/product/:id" element={<ProductPage />} />
-          {/* Future routes for other pages can be added here */}
-        </Routes>
-      
-      
-      </div>
-      <Footer />
+        smooth
+        className="flex items-center justify-center bg-coffeeDeep text-white rounded-full shadow-md hover:bg-darkolivegreen"
+      />
+      <MainContent />
     </Router>
   );
 };
 
-export default App;
+const MainContent = () => {
+  const location = useLocation();
+  const hideNavbarRoutes = ["/About", "/Contact"]; // Hide Navbar on About and Contact pages
+
+  return (
+    <div className="bg-white dark:bg-darkBg min-h-screen">
+      <Header />
+      {!hideNavbarRoutes.includes(location.pathname) && <Navbar />} 
+
+      <Routes>
+        <Route path="/" element={<HomeCards />} />
+        <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Faqs" element={<FAQsPage />} />
+        <Route path="/Care_instructions" element={<CareInstructionsPage />} />
+        <Route path="/shipping_policies" element={<ShippingPoliciesPage />} />
+        <Route path="/The-Coffee-Arc/product/:id" element={<ProductPage />} />
+      </Routes>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default App;

@@ -13,6 +13,20 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url('./fonts/OpenSans-Light.ttf') format('truetype'); /* Adjusted Path */
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Juliette';
+  src: url('./fonts/Juliette.otf') format('opentype'); /* Adjusted path */
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 @tailwind base;

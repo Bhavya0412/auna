@@ -2,11 +2,11 @@
     "the_coffee_arc" : [
         {
             "id": "tca01",
-            "name": "The Latte",
+            "name": "Latte",
             "og_price": 1499,
-            "display_price": 999,
-            "description": "purse wow",
-            "product_detail": "this is a lattee colur purse pls chande the tsdec tioan .",
+            "display_price": 1099,
+            "description": "Soft.Neutral.Effortless",
+            "product_detail": "This Latte-hued bag is a perfect blend of minimal elegance and everyday versatility. Inspired by the warmth of your favorite brew, it’s designed to complement any look effortlessly.",
             "img_path": "/assets/the-coffee-arc/brown_bag.webp",
             "additional_images": [
               "/assets/bestseller/bsdc2.jpg",
@@ -15,16 +15,16 @@
               "/assets/bestseller/bsdc5.jpg"
             ],
             "fabric": "faux leather",
-            "size": "28 x 8 x 38",
-            "additional_details": "details"
+            "size": "31 x 24 x 7",
+           "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
           },
           {
             "id": "tca02",
-            "name": "The mocha",
+            "name": "Mocha",
             "og_price": 1499,
-            "display_price": 999,
-            "description": "purse wow",
-            "product_detail": "this is a lattee colur purse pls chande the tsdec tioan .",
+            "display_price": 1099,
+            "description": "Warm. Chic. Effortless.",
+            "product_detail": "Rich and versatile, the Mocha bag is the perfect balance of elegance and everyday charm. Inspired by the comforting hues of your favorite coffee, it’s designed to pair seamlessly with any look.",
             "img_path": "/assets/the-coffee-arc/beige_bag.webp",
             "additional_images": [
               "/assets/bestseller/bsdc2.jpg",
@@ -33,16 +33,16 @@
               "/assets/bestseller/bsdc5.jpg"
             ],
             "fabric": "faux leather",
-            "size": "28 x 8 x 38",
-            "additional_details": "details"
+            "size": "31 x 24 x 7",
+            "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
           },
           {
             "id": "tca03",
-            "name": "The expresso",
+            "name": "Espresso",
             "og_price": 1499,
             "display_price": 999,
-            "description": "purse wow",
-            "product_detail": "this is a lattee colur purse pls chande the tsdec tioan .",
+            "description": "Bold. Sleek. Timeless.",
+            "product_detail": "Deep, rich, and effortlessly classic—the Espresso bag is a statement of confidence and sophistication. Inspired by the boldness of your favorite brew, it’s the perfect go-to for any occasion.",
             "img_path": "/assets/the-coffee-arc/black_bag.webp",
             "additional_images": [
               "/assets/bestseller/bsdc2.jpg",
@@ -51,8 +51,8 @@
               "/assets/bestseller/bsdc5.jpg"
             ],
             "fabric": "faux leather",
-            "size": "28 x 8 x 38",
-            "additional_details": "details"
+            "size": "31 x 24 x 7",
+            "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
           }
     ]
 }

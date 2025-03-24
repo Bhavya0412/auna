@@ -64,7 +64,7 @@ const ProductCard = ({ id, name, description, display_price, og_price, img_path,
       
       <div className="md:w-1/2 p-8 flex flex-col justify-center">
         <motion.h3 
-          className="text-2xl font-bold mb-2 text-coffeeDeep"
+          className="text-2xl font-serif mb-2 text-coffeeDeep"
           whileHover={{ scale: 1.05, color: '#5C6147' }}
           transition={{ duration: 0.2 }}
         >
