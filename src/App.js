@@ -31,7 +31,7 @@ const App = () => {
 
 const MainContent = () => {
   const location = useLocation();
-  const hideNavbarRoutes = ["/About", "/Contact"]; // Hide Navbar on About and Contact pages
+  const hideNavbarRoutes = ["/About", "/Contact", "/shipping_policies", "/Care_instructions","/Faqs","/shipping_policies","/TermsAndConditions"]; // Hide Navbar on About, Contact, Shipping Policies, and Care Instructions pages
 
   return (
     <div className="bg-white dark:bg-darkBg min-h-screen">

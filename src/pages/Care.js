@@ -13,7 +13,7 @@ const careInstructions = [
   },
   {
     id: 3,
-    title: "Storage Suggestions",
+    title: "Storage",
     description: "• Store the bag in its dust bag when not in use.\n• Stuff the bag with tissue paper to maintain its shape."
   }
 ];
@@ -25,8 +25,8 @@ const CareInstructionsPage = () => {
       <div className="max-w-3xl mx-auto space-y-6">
         {careInstructions.map((instruction) => (
           <div key={instruction.id} className="bg-oliveGreen text-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-semibold mb-4">{instruction.title}</h2>
-            <p className="whitespace-pre-line text-lg mb-4">{instruction.description}</p>
+            <h2 className="text-3xl mb-4 font-Open_Sans">{instruction.title}</h2>
+            <p className="whitespace-pre-line text-lg mb-4 text-justify">{instruction.description}</p>
           </div>
         ))}
       </div>

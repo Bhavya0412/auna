@@ -51,7 +51,7 @@ I am interested in the ${product.name} at Rs. ${product.display_price}.
 Size: ${product.size}  
 I found this on the Auna website and would love to know more details.`;
 
-      setWhatsappURL(`https://wa.me/918591412014?text=${encodeURIComponent(whatsappMsg)}`);
+      setWhatsappURL(`https://wa.me/919967425691?text=${encodeURIComponent(whatsappMsg)}`);
     }
   }, [product]);
 

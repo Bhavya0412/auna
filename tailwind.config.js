@@ -14,7 +14,7 @@ module.exports = {
 
       },
       colors: {
-        white: "#FCFCFF",
+        white: "#FFFFFF",
         beige: "#F5F5DC",
         coffeeTan: "#D2B48C",
         coffeeDeep: "#8B5A2B",

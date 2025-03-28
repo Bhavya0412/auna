@@ -13,18 +13,18 @@ const Footer = () => {
           <h3 className="text-xl font-bold mb-3">AUNA</h3>
           <p className="mb-4 text-sm">
             Where elegance meets craftsmanship,    
-            Made in India.
+            Made in India.
           </p>
           <div className="flex space-x-4 mb-4 md:mb-0">
             <motion.a 
-              href="#" 
+              href="https://www.instagram.com/direct/t/17845145331390942" 
               whileHover={{ y: -3 }}
               className="text-cream hover:text-white"
             >
               <Instagram size={20} />
             </motion.a>
             <motion.a 
-              href="#" 
+              href={`https://wa.me/919967425691?text=${encodeURIComponent('Hello, I am interested in your products!')}`} 
               whileHover={{ y: -3 }}
               className="text-cream hover:text-white"
             >
@@ -72,11 +72,11 @@ const Footer = () => {
           <ul className="space-y-2">
             <li className="flex items-center">
               <Mail size={16} className="mr-2" />
-              <a href="mail to :hello@aunapurses.com" className="hover:text-white transition-colors">bagsauna@gmail.com</a>
+              <a href="mailto:bagsauna@gmail.com" className="hover:text-white transition-colors">bagsauna@gmail.com</a>
             </li>
             <li className="flex items-center">
               <Phone size={16} className="mr-2" />
-              <a href="Contact:" className="hover:text-white transition-colors">+91 9967425691</a>
+              <a href="tel:+919967425691" className="hover:text-white transition-colors">+91 9967425691</a>
             </li>
             <li className="flex items-start">
               <MapPin size={16} className="mr-2 mt-1" />

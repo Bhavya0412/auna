@@ -1,5 +1,4 @@
 import React from 'react';
-
 const shippingPolicies = [
   {
     id: 1,
@@ -16,25 +15,23 @@ const shippingPolicies = [
   {
     id: 3,
     title: "Returns & Exchanges",
-    description: "We currently do not offer returns or refunds. All sales are final."
+    description: "• We currently do not offer returns or refunds. All sales are final."
   }
 ];
-
 const ShippingPoliciesPage = () => {
   return (
-    <div className="min-h-screen bg-white text-oliveGreen p-8 flex items-center justify-center">
+    <div className="min-h-screen bg-white text-oliveGreen pt-0 p-4 flex items-center justify-center font-sans">
       <div className="max-w-3xl w-full">
         {/* Page Title */}
-        <h1 className="text-5xl font-bold mb-8 text-center">Shipping Policies</h1>
-
+        <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4 text-center">Shipping Policies</h1>
         {/* Shipping Policy Cards */}
-        <div className="space-y-6">
+        <div className="space-y-3 md:space-y-6">
           {shippingPolicies.map((policy) => (
-            <div key={policy.id} className="bg-[#3E4A26] text-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-2xl font-semibold mb-4">{policy.title}</h2>
-              <p className="whitespace-pre-line text-lg mb-4">{policy.description}</p>
+            <div key={policy.id} className="bg-[#3E4A26] text-white p-3 md:p-6 rounded-lg shadow-lg">
+              <h2 className="text-lg md:text-2xl font-normal mb-1 md:mb-4 font-openSans">{policy.title}</h2>
+              <p className="whitespace-pre-line text-sm md:text-base mb-1 md:mb-4 leading-tight">{policy.description}</p>
               {policy.cost && (
-                <p className="text-md whitespace-pre-line font-medium">{policy.cost}</p>
+                <p className="text-sm md:text-base whitespace-pre-line font-medium leading-tight">{policy.cost}</p>
               )}
             </div>
           ))}
@@ -43,5 +40,4 @@ const ShippingPoliciesPage = () => {
     </div>
   );
 };
-
 export default ShippingPoliciesPage;
