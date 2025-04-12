@@ -4,7 +4,7 @@ import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-oliveGreen text-cream py-8 px-4 mt-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -15,16 +15,25 @@ const Footer = () => {
             Where elegance meets craftsmanship,    
             Made in India.
           </p>
+
+          {/* Social Icons */}
           <div className="flex space-x-4 mb-4 md:mb-0">
+            {/* Instagram */}
             <motion.a 
-              href="https://www.instagram.com/direct/t/17845145331390942" 
+              href="https://www.instagram.com/auna.in"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ y: -3 }}
               className="text-cream hover:text-white"
             >
               <Instagram size={20} />
             </motion.a>
+
+            {/* WhatsApp */}
             <motion.a 
               href={`https://wa.me/919967425691?text=${encodeURIComponent('Hello, I am interested in your products!')}`} 
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ y: -3 }}
               className="text-cream hover:text-white"
             >
@@ -86,7 +95,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Section with copyright */}
+      {/* Bottom Section */}
       <div className="max-w-6xl mx-auto mt-6 pt-4 border-t border-cream/20 text-center text-sm">
         <p>© {currentYear} Auna. All rights reserved.</p>
         <div className="mt-1 space-x-4">

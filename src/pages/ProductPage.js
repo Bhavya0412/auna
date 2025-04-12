@@ -71,19 +71,24 @@ I found this on the Auna website and would love to know more details.`;
       </div>
     );
   }
-
+  
   const handleInstagramInquiry = () => {
     const message = `${window.location.href}
-Hello, I hope you're doing well! 
-I am interested in the ${product.name} at Rs. ${product.display_price}.
-Size: ${product.size}
-I found this on the Auna website and would love to know more details.`;
-
+  Hello, I hope you're doing well! 
+  I am interested in the ${product.name} at Rs. ${product.display_price}.
+  Size: ${product.size}
+  I found this on the Auna website and would love to know more details.`;
+  
+    // Copy to clipboard
     navigator.clipboard.writeText(message).then(() => {
-      alert("Message copied! Now paste it in Instagram chat.");
+      alert("Message copied to clipboard! You'll be redirected to Instagram now. Just paste it in the chat.");
+      // Open Instagram chat (replace with actual thread or profile link)
       window.open("https://www.instagram.com/direct/t/17845145331390942", "_blank");
+    }).catch((err) => {
+      console.error("Failed to copy message: ", err);
     });
   };
+  
 
   return (
     <section className="py-16 bg-white text-coffeeDeep">
