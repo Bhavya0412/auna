@@ -41,9 +41,9 @@ const Header = () => {
               <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 Home
               </a>
-              <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
+              {/* <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 Collections
-              </a>
+              </a> */}
               <a href="/About" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 About
               </a>
@@ -60,9 +60,9 @@ const Header = () => {
             <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
               Home
             </a>
-            <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
+            {/* <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
               Collections
-            </a>
+            </a> */}
           </nav>
 
           <div className="flex items-center justify-center w-1/3">
