@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="google-site-verification" content="0VO-IaX0jVUSurOksYE17E1xK5Go2v-mRWa9LKsG1ak" />
-    <meta name="description" content="Auna: Handcrafted bags and sustainable designs" />
+    <meta name="description" content="Auna: A made in India brand with elegant designs at affordable rates ." />
     
     <!-- AMP boilerplate -->
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -44,10 +44,33 @@
       </style>
     </noscript>
 
-    <!-- AMP won't allow React to work, this is symbolic -->
     <title>Auna</title>
+
+    <!-- AMP required for images -->
+    <script async custom-element="amp-img" src="https://cdn.ampproject.org/v0/amp-img-0.1.js"></script>
+
+    <style amp-custom>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        text-align: center;
+        background: #fff;
+      }
+      .logo {
+        margin-bottom: 20px;
+      }
+      .description {
+        font-size: 1.2em;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="logo">
+      <amp-img src="aunalogo.jpg" width="200" height="80" alt="Auna Logo" layout="fixed"></amp-img>
+    </div>
+    <div class="description">
+      <p>Auna: A made in India brand with elegant designs at affordable rates ."</p>
+    </div>
   </body>
 </html>
