@@ -3,7 +3,7 @@ const { createWriteStream } = require('fs');
 const path = require('path');
 
 (async () => {
-  const sitemap = new SitemapStream({ hostname: 'https://www.yourdomain.com/' });
+  const sitemap = new SitemapStream({ hostname: 'https://aunabags.com//' });
 
   const writeStream = createWriteStream(path.resolve(__dirname, 'public', 'sitemap.xml'));
   sitemap.pipe(writeStream);
