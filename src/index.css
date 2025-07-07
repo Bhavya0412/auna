@@ -1,3 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
 @font-face {
   font-family: 'Blackjack';
   src: url('./fonts/Sacramento-Regular.ttf') format('truetype');
@@ -26,9 +42,57 @@
   font-weight: normal;
   font-style: normal;
 }
+.transition-all {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
 
+/* Backdrop blur optimization */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Hover effects - only transform and box-shadow for performance */
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Coffee theme color utilities */
+.text-coffee-dark {
+  color: #3c2415;
+}
+
+.text-coffee-medium {
+  color: #8b4513;
+}
+
+.text-coffee-light {
+  color: #d2691e;
+}
+
+.bg-coffee-light {
+  background-color: #f5deb3;
+}
+
+.bg-coffee-medium {
+  background-color: #deb887;
+}
+
+.bg-coffee-dark {
+  background-color: #8b4513;
+}
+
+/* Gradient utilities for coffee theme */
+.gradient-coffee {
+  background: linear-gradient(135deg, #8b4513, #d2691e);
+}
+
+.gradient-coffee-light {
+  background: linear-gradient(135deg, #f5deb3, #deb887);
+}
+
