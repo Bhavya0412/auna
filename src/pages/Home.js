@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useNavigate } from "react-router-dom"; // for navigation
+import { useNavigate } from "react-router-dom"; 
+import InstagramFollowSection from '../components/InstagramFollowSection';
 
 const ProductCard = ({ id, name, description, display_price, og_price, img_path, isReversed, index }) => {
   const controls = useAnimation();
@@ -189,6 +190,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+    <InstagramFollowSection />  
     </div>
   );
 };
