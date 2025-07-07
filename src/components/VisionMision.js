@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, Target, Heart } from 'lucide-react';
 
+
 const VisionMission = () => {
  const [activeCard, setActiveCard] = useState(null);
 
