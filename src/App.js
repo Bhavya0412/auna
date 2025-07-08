@@ -15,23 +15,30 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
+import Cart from './pages/Cart';
+import { CartProvider } from './context/CartContext';
+
 
 const App = () => {
   return (
-    <Router>
+    
+      <Router>
+      <CartProvider>
       <ScrollerOnTop />
       <ScrollToTop
         smooth
         className="flex items-center justify-center bg-coffeeDeep text-white rounded-full shadow-md hover:bg-darkolivegreen"
       />
       <MainContent />
+      </CartProvider>
     </Router>
+    
   );
 };
 
 const MainContent = () => {
   const location = useLocation();
-  const hideNavbarRoutes = ["/About", "/Contact", "/shipping_policies", "/Care_instructions","/Faqs","/shipping_policies","/TermsAndConditions"]; // Hide Navbar on About, Contact, Shipping Policies, and Care Instructions pages
+  const hideNavbarRoutes = ["/About", "/Contact", "/shipping_policies", "/Care_instructions","/Faqs","/shipping_policies","/TermsAndConditions", "/Cart"]; // Hide Navbar on About, Contact, Shipping Policies, and Care Instructions pages
 
   return (
     <div className="bg-white dark:bg-darkBg min-h-screen">
@@ -48,6 +55,7 @@ const MainContent = () => {
         <Route path="/Care_instructions" element={<CareInstructionsPage />} />
         <Route path="/shipping_policies" element={<ShippingPoliciesPage />} />
         <Route path="/The-Coffee-Arc/product/:id" element={<ProductPage />} />
+        <Route path="/Cart" element={<Cart />} />
       </Routes>
 
       <Footer />

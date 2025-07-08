@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
+import { faShareAlt, faShoppingCart, faEye } from "@fortawesome/free-solid-svg-icons";
+import { useCart } from "../context/CartContext";
+import { motion } from "framer-motion";
 
 const ProductPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [loading, setLoading] = useState(true);
   const [whatsappURL, setWhatsappURL] = useState("#");
+  const [isAdding, setIsAdding] = useState(false);
+  
+  const { addToCart, cartItems } = useCart();
+
+  // Check if product is already in cart
+  const isInCart = cartItems.some(item => item.id === id);
+  const cartItem = cartItems.find(item => item.id === id);
 
   useEffect(() => {
     // Simulate fetching product data
@@ -55,6 +65,22 @@ I found this on the Auna website and would love to know more details.`;
     }
   }, [product]);
 
+  const handleAddToCart = () => {
+    if (!product || isInCart) return;
+    
+    setIsAdding(true);
+    addToCart(product, 1);
+    
+    // Show feedback animation
+    setTimeout(() => {
+      setIsAdding(false);
+    }, 1000);
+  };
+
+  const handleViewInCart = () => {
+    navigate('/cart');
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -88,7 +114,6 @@ I found this on the Auna website and would love to know more details.`;
       console.error("Failed to copy message: ", err);
     });
   };
-  
 
   return (
     <section className="py-16 bg-white text-coffeeDeep">
@@ -122,32 +147,66 @@ I found this on the Auna website and would love to know more details.`;
             <div className="flex items-baseline space-x-3 my-4">
               <span className="text-2xl font-medium text-oliveGreen">Rs. {product.display_price}</span>
               <span className="text-lg line-through text-mochaBrown opacity-70">Rs. {product.og_price}</span>
-              <span className="text-sm text-oliveGreen">
+              <span className="text-sm text-white bg-green-500 px-2 py-1 rounded">
                 {Math.round(((product.og_price - product.display_price) / product.og_price) * 100)}% OFF
               </span>
             </div>
 
+            {/* Cart Status */}
+            {isInCart && (
+              <div className="bg-green-100 border border-green-300 text-green-700 px-4 py-2 rounded-md mb-4">
+                <span className="font-medium">✓ Added to cart ({cartItem?.quantity} item(s))</span>
+              </div>
+            )}
+
+            {/* Add to Cart or View in Cart Button */}
+            {!isInCart ? (
+              <motion.button
+                onClick={handleAddToCart}
+                disabled={isAdding}
+                className={`w-full mb-4 py-3 px-6 rounded-md font-medium transition-colors duration-300 ${
+                  isAdding 
+                    ? 'bg-green-500 text-white' 
+                    : 'bg-oliveGreen text-white hover:bg-darkolivegreen'
+                }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
+                {isAdding ? 'Added to Cart!' : 'Add to Cart'}
+              </motion.button>
+            ) : (
+              <motion.button
+                onClick={handleViewInCart}
+                className="w-full mb-4 py-3 px-6 rounded-md font-medium bg-coffeeTan text-white hover:bg-coffeeDeep transition-colors duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FontAwesomeIcon icon={faEye} className="mr-2" />
+                View in Cart
+              </motion.button>
+            )}
+
             <p className="mb-6 text-mochaBrown">{product.product_detail}</p>
 
            {/* Product Specifications */}
-<div className="bg-beige border border-coffeeTan rounded-lg p-6 mb-8">
-  <h3 className="font-serif text-xl mb-4 text-coffeeDeep border-b border-coffeeTan pb-2">Product Details</h3>
-  <div className="grid grid-cols-1 gap-3">
-    <div className="flex">
-      <span className="font-medium w-28 flex-shrink-0">Material:</span>
-      <span className="text-mochaBrown">{product.fabric}</span>
-    </div>
-    <div className="flex">
-      <span className="font-medium w-28 flex-shrink-0">Dimensions:</span>
-      <span className="text-mochaBrown">{product.size} cm</span>
-    </div>
-    <div className="flex">
-      <span className="font-medium w-28 flex-shrink-0">Additional:</span>
-      <span className="text-mochaBrown">{product.additional_details}</span>
-    </div>
-  </div>
-</div>
-
+            <div className="bg-beige border border-coffeeTan rounded-lg p-6 mb-8">
+              <h3 className="font-serif text-xl mb-4 text-coffeeDeep border-b border-coffeeTan pb-2">Product Details</h3>
+              <div className="grid grid-cols-1 gap-3">
+                <div className="flex">
+                  <span className="font-medium w-28 flex-shrink-0">Material:</span>
+                  <span className="text-mochaBrown">{product.fabric}</span>
+                </div>
+                <div className="flex">
+                  <span className="font-medium w-28 flex-shrink-0">Dimensions:</span>
+                  <span className="text-mochaBrown">{product.size} cm</span>
+                </div>
+                <div className="flex">
+                  <span className="font-medium w-28 flex-shrink-0">Additional:</span>
+                  <span className="text-mochaBrown">{product.additional_details}</span>
+                </div>
+              </div>
+            </div>
 
             {/* Contact Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">

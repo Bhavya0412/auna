@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { FiShoppingCart } from 'react-icons/fi';
+import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { getCartItemsCount } = useCart();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -50,6 +54,16 @@ const Header = () => {
               <a href="/Contact" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 Contact
               </a>
+             <Link to="/Cart" className="relative font-['Cormorant Garamond'] flex items-center justify-center gap-2 text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
+  <FiShoppingCart size={20} />
+  Cart
+  {getCartItemsCount() > 0 && (
+    <span className="absolute -top-1 -right-4 bg-red-500 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
+      {getCartItemsCount()}
+    </span>
+  )}
+</Link>
+
             </nav>
           </div>
         </div>
@@ -78,6 +92,14 @@ const Header = () => {
             <a href="/Contact" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
               Contact
             </a>
+             <Link to="/Cart" className="relative text-oliveGreen hover:text-coffeeDeep/80 transition-colors duration-200">
+  <FiShoppingCart size={24} />
+  {getCartItemsCount() > 0 && (
+    <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
+      {getCartItemsCount()}
+    </span>
+  )}
+</Link>
           </nav>
         </div>
       </div>

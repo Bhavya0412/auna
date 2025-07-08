@@ -2,19 +2,43 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useNavigate } from "react-router-dom"; 
+import { useCart } from '../context/CartContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faEye, faCheck } from '@fortawesome/free-solid-svg-icons';
 import InstagramFollowSection from '../components/InstagramFollowSection';
 
-const ProductCard = ({ id, name, description, display_price, og_price, img_path, isReversed, index }) => {
+const ProductCard = ({ id, name, description, display_price, og_price, img_path, isReversed, index, product }) => {
   const controls = useAnimation();
-  const navigate = useNavigate(); // for navigation
+  const navigate = useNavigate();
+  const { addToCart, cartItems } = useCart();
+  const [isAdding, setIsAdding] = useState(false);
 
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
 
+  // Check if product is already in cart
+  const isInCart = cartItems.some(item => item.id === id);
+
   const openProductPage = (productId) => {
     navigate(`/The-Coffee-Arc/product/${productId}`);
+  };
+
+  const handleAddToCart = () => {
+    if (isInCart) return; // Don't add if already in cart
+    
+    setIsAdding(true);
+    addToCart(product);
+    
+    // Show feedback animation
+    setTimeout(() => {
+      setIsAdding(false);
+    }, 1000);
+  };
+
+  const handleViewInCart = () => {
+    navigate('/cart');
   };
 
   useEffect(() => {
@@ -52,44 +76,129 @@ const ProductCard = ({ id, name, description, display_price, og_price, img_path,
                  transition-shadow duration-300 max-w-6xl mx-auto border-2 border-coffeeTan`}
     >
       <motion.div 
-        className="md:w-1/2 overflow-hidden"
+        className="md:w-1/2 overflow-hidden relative group"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}
       >
         <img 
           src={img_path} 
           alt={name} 
+          loading="lazy"
           className="w-full h-full object-cover object-center"
         />
+        
+        {/* Quick Action Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="flex space-x-4">
+            <motion.button
+              onClick={() => openProductPage(id)}
+              className="bg-white text-coffeeDeep px-4 py-2 rounded-md hover:bg-cream transition-colors flex items-center space-x-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FontAwesomeIcon icon={faEye} />
+              <span>View</span>
+            </motion.button>
+            
+            {!isInCart ? (
+              <motion.button
+                onClick={handleAddToCart}
+                disabled={isAdding}
+                className={`px-4 py-2 rounded-md transition-colors flex items-center space-x-2 ${
+                  isAdding 
+                    ? 'bg-green-500 text-white' 
+                    : 'bg-oliveGreen text-white hover:bg-darkolivegreen'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FontAwesomeIcon icon={faShoppingCart} />
+                <span>{isAdding ? 'Added!' : 'Add to Cart'}</span>
+              </motion.button>
+            ) : (
+              <motion.button
+                onClick={handleViewInCart}
+                className="px-4 py-2 bg-coffeeTan text-white rounded-md hover:bg-coffeeDeep transition-colors flex items-center space-x-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FontAwesomeIcon icon={faCheck} />
+                <span>In Cart</span>
+              </motion.button>
+            )}
+          </div>
+        </div>
       </motion.div>
       
       <div className="md:w-1/2 p-8 flex flex-col justify-center">
         <motion.h3 
-          className="text-2xl font-serif mb-2 text-coffeeDeep"
+          className="text-4xl font-serif mb-2 text-coffeeDeep cursor-pointer"
+          onClick={() => openProductPage(id)}
           whileHover={{ scale: 1.05, color: '#5C6147' }}
           transition={{ duration: 0.2 }}
         >
           {name}
         </motion.h3>
         <div className="w-16 h-1 bg-oliveGreen mb-4"></div>
-        <p className="text-darkolivegreen mb-6">{description}</p>
-        <span className="text-xl font-semibold text-mochaBrown line-through opacity-60 mb-2">
-            ₹{(og_price).toFixed(2)} {"\n"}
+        <p className="text-darkolivegreen mb-6 text-xl leading-relaxed">{description}</p>
+        
+        <div className="flex items-center space-x-2 mb-4">
+          <span className="text-xl font-semibold text-mochaBrown line-through opacity-60">
+            ₹{(og_price).toFixed(2)}
           </span>
+          <span className="text-2xl font-bold text-oliveGreen">₹{(display_price).toFixed(2)}</span>
+          
+        </div>
+
+        {/* Show cart status */}
+        {isInCart && (
+          <div className="bg-amber-100 border border-amber-900 text-amber-900 px-3 py-2 rounded-md mb-4 text-sm">
+            <FontAwesomeIcon icon={faCheck} className="mr-2" />
+            Added to cart
+          </div>
+        )}
+        
         <motion.div 
-          className="flex items-center"
+          className="flex items-center space-x-4"
           whileHover={{ x: 10 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="text-xl font-semibold text-mochaBrown mr-4">₹{(display_price).toFixed(2)}</span>
           <motion.button 
             className="px-6 py-2 bg-oliveGreen text-white rounded hover:bg-darkolivegreen transition-colors duration-300"
             onClick={() => openProductPage(id)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
+            <FontAwesomeIcon icon={faEye} className="mr-2" />
             View Details
           </motion.button>
+          
+          {!isInCart ? (
+            <motion.button 
+              className={`px-6 py-2 rounded transition-colors duration-300 ${
+                isAdding 
+                  ? 'bg-green-500 text-white' 
+                  : 'bg-coffeeTan text-white hover:bg-coffeeDeep'
+              }`}
+              onClick={handleAddToCart}
+              disabled={isAdding}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
+              {isAdding ? 'Added!' : 'Add to Cart'}
+            </motion.button>
+          ) : (
+            <motion.button 
+              className="px-6 py-2 bg-mochaBrown text-white rounded hover:bg-coffeeDeep transition-colors duration-300"
+              onClick={handleViewInCart}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FontAwesomeIcon icon={faCheck} className="mr-2" />
+              View in Cart
+            </motion.button>
+          )}
         </motion.div>
       </div>
     </motion.div>
@@ -135,7 +244,6 @@ const Hero = () => {
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  // const navigate = useNavigate();
   
   useEffect(() => {
     // Fetch the product data from the JSON file
@@ -186,11 +294,12 @@ const Home = () => {
               img_path={product.img_path}
               isReversed={index % 2 !== 0}
               index={index}
+              product={product}
             />
           ))}
         </div>
       </div>
-    <InstagramFollowSection />  
+      <InstagramFollowSection />  
     </div>
   );
 };
