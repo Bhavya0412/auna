@@ -66,7 +66,7 @@ I found this on the Auna website and would love to know more details.`;
   }, [product]);
 
   const handleAddToCart = () => {
-    if (!product || isInCart) return;
+    if (!product) return;
     
     setIsAdding(true);
     addToCart(product, 1);
@@ -77,10 +77,7 @@ I found this on the Auna website and would love to know more details.`;
     }, 1000);
   };
 
-  const handleViewInCart = () => {
-    navigate('/cart');
-  };
-
+ 
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -147,26 +144,24 @@ I found this on the Auna website and would love to know more details.`;
             <div className="flex items-baseline space-x-3 my-4">
               <span className="text-2xl font-medium text-oliveGreen">Rs. {product.display_price}</span>
               <span className="text-lg line-through text-mochaBrown opacity-70">Rs. {product.og_price}</span>
-              <span className="text-sm text-white bg-green-500 px-2 py-1 rounded">
-                {Math.round(((product.og_price - product.display_price) / product.og_price) * 100)}% OFF
-              </span>
+              
             </div>
 
             {/* Cart Status */}
             {isInCart && (
-              <div className="bg-green-100 border border-green-300 text-green-700 px-4 py-2 rounded-md mb-4">
+              <div className="bg-amber-100 border border-amber-500 text-amber-700 px-4 py-2 rounded-md mb-4">
                 <span className="font-medium">✓ Added to cart ({cartItem?.quantity} item(s))</span>
               </div>
             )}
 
             {/* Add to Cart or View in Cart Button */}
-            {!isInCart ? (
+            {
               <motion.button
                 onClick={handleAddToCart}
                 disabled={isAdding}
                 className={`w-full mb-4 py-3 px-6 rounded-md font-medium transition-colors duration-300 ${
                   isAdding 
-                    ? 'bg-green-500 text-white' 
+                    ? 'bg-lime-700 text-white' 
                     : 'bg-oliveGreen text-white hover:bg-darkolivegreen'
                 }`}
                 whileHover={{ scale: 1.02 }}
@@ -175,17 +170,7 @@ I found this on the Auna website and would love to know more details.`;
                 <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
                 {isAdding ? 'Added to Cart!' : 'Add to Cart'}
               </motion.button>
-            ) : (
-              <motion.button
-                onClick={handleViewInCart}
-                className="w-full mb-4 py-3 px-6 rounded-md font-medium bg-coffeeTan text-white hover:bg-coffeeDeep transition-colors duration-300"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <FontAwesomeIcon icon={faEye} className="mr-2" />
-                View in Cart
-              </motion.button>
-            )}
+            }
 
             <p className="mb-6 text-mochaBrown">{product.product_detail}</p>
 
@@ -214,13 +199,13 @@ I found this on the Auna website and would love to know more details.`;
                 href={whatsappURL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-coffeeTan hover:bg-coffeeDeep text-cream font-medium py-3 px-6 rounded-md text-center transition-colors duration-300"
+                className="w-full sm:w-auto bg-coffeeDeep hover:bg-coffeeTan text-cream font-medium py-3 px-6 rounded-md text-center transition-colors duration-300"
               >
                 Enquire on WhatsApp
               </a>
               <button
                 onClick={handleInstagramInquiry}
-                className="w-full sm:w-auto bg-mochaBrown hover:bg-coffeeDeep text-cream font-medium py-3 px-6 rounded-md text-center transition-colors duration-300"
+                className="w-full sm:w-auto bg-yellow-900 hover:bg-coffeeTan text-cream font-medium py-3 px-6 rounded-md text-center transition-colors duration-300"
               >
                 Enquire on Instagram
               </button>

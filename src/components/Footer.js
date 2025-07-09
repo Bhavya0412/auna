@@ -1,6 +1,7 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -59,9 +60,9 @@ const Footer = () => {
         <div className="md:col-span-1">
           <h3 className="text-lg font-bold mb-2">Shop</h3>
           <ul className="space-y-1">
-            <li><a href="/" className="hover:text-white transition-colors">New Arrivals</a></li>
-            <li><a href="/" className="hover:text-white transition-colors">Best Sellers</a></li>
-            <li><a href="/" className="hover:text-white transition-colors">Collections</a></li>
+            <li><Link to="/" className="hover:text-white transition-colors">New Arrivals</Link></li>
+            <li><Link to="/" className="hover:text-white transition-colors">Best Sellers</Link></li>
+            <li><Link to="/" className="hover:text-white transition-colors">Collections</Link></li>
           </ul>
         </div>
 
@@ -69,9 +70,9 @@ const Footer = () => {
         <div className="md:col-span-1">
           <h3 className="text-lg font-bold mb-2">Help</h3>
           <ul className="space-y-1">
-            <li><a href="/Faqs" className="hover:text-white transition-colors">FAQs</a></li>
-            <li><a href="/shipping_policies" className="hover:text-white transition-colors">Shipping Policies</a></li>
-            <li><a href="/Care_instructions" className="hover:text-white transition-colors">Care Instructions</a></li>
+            <li><Link to="/Faqs" className="hover:text-white transition-colors">FAQs</Link></li>
+            <li><Link to="/shipping_policies" className="hover:text-white transition-colors">Shipping Policies</Link></li>
+            <li><Link to="/Care_instructions" className="hover:text-white transition-colors">Care Instructions</Link></li>
           </ul>
         </div>
 
@@ -99,8 +100,8 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto mt-6 pt-4 border-t border-cream/20 text-center text-sm">
         <p>© {currentYear} Auna. All rights reserved.</p>
         <div className="mt-1 space-x-4">
-          <a href="/PrivacyPolicy" className="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="/TermsAndConditions" className="hover:text-white transition-colors">Terms and Conditions</a>
+          <Link to="/PrivacyPolicy" className="hover:text-white transition-colors">Privacy Policy</Link>
+          <Link to="/TermsAndConditions" className="hover:text-white transition-colors">Terms and Conditions</Link>
         </div>
       </div>
     </footer>

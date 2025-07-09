@@ -99,12 +99,12 @@ Cart URL: ${window.location.href}`;
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-serif mb-4 text-coffeeDeep">Shopping Cart</h1>
+          <h1 className="text-4xl font-serif mb-4 -mt-9 text-coffeeDeep">Shopping Cart</h1>
           <div className="w-24 h-1 bg-oliveGreen mx-auto mb-6"></div>
-          <p className="text-lg text-mochaBrown">Review your selected items</p>
+          <p className="text-lg -mt-2 text-mochaBrown">Review your selected items</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 -mt-2">
           {/* Cart Items */}
           <div className="lg:col-span-2">
             <div className="space-y-6">
@@ -153,14 +153,14 @@ Cart URL: ${window.location.href}`;
                             <div className="flex items-center space-x-2">
                               <button
                                 onClick={() => decrementQuantity(item.id, item.quantity)}
-                                className="w-8 h-8 bg-coffeeTan text-white rounded-full flex items-center justify-center hover:bg-coffeeDeep transition-colors"
+                                className="w-8 h-8 bg-coffeeDeep text-white rounded-full flex items-center justify-center hover:bg-coffeeTan transition-colors"
                               >
                                 <FontAwesomeIcon icon={faMinus} size="sm" />
                               </button>
                               <span className="font-bold text-lg w-8 text-center">{item.quantity}</span>
                               <button
                                 onClick={() => incrementQuantity(item.id, item.quantity)}
-                                className="w-8 h-8 bg-coffeeTan text-white rounded-full flex items-center justify-center hover:bg-coffeeDeep transition-colors"
+                                className="w-8 h-8 bg-coffeeDeep text-white rounded-full flex items-center justify-center hover:bg-coffeeTan transition-colors"
                               >
                                 <FontAwesomeIcon icon={faPlus} size="sm" />
                               </button>
@@ -183,7 +183,7 @@ Cart URL: ${window.location.href}`;
                             </button>
                             <button
                               onClick={() => removeFromCart(item.id)}
-                              className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors text-sm"
+                              className="px-3 py-1 bg-yellow-900 text-white rounded-md hover:bg-yellow-800 transition-colors text-sm"
                             >
                               <FontAwesomeIcon icon={faTrash} className="mr-1" />
                               Remove
@@ -227,13 +227,13 @@ Cart URL: ${window.location.href}`;
                   href={whatsappURL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-coffeeTan hover:bg-coffeeDeep text-cream font-medium py-3 px-4 rounded-md text-center transition-colors duration-300 block"
+                  className="w-full bg-lime-900 hover:bg-lime-800 text-cream font-medium py-3 px-4 rounded-md text-center transition-colors duration-300 block"
                 >
                   Enquire via WhatsApp
                 </a>
                 <button
                   onClick={handleInstagramInquiry}
-                  className="w-full bg-mochaBrown hover:bg-coffeeDeep text-cream font-medium py-3 px-4 rounded-md text-center transition-colors duration-300"
+                  className="w-full bg-lime-900 hover:bg-lime-800 text-cream font-medium py-3 px-4 rounded-md text-center transition-colors duration-300"
                 >
                   Enquire via Instagram
                 </button>
@@ -249,7 +249,7 @@ Cart URL: ${window.location.href}`;
                 </button>
                 <button
                   onClick={clearCart}
-                  className="w-full bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-md text-center transition-colors duration-300"
+                  className="w-full bg-yellow-800 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded-md text-center transition-colors duration-300"
                 >
                   Clear Cart
                 </button>

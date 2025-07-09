@@ -42,18 +42,16 @@ const Header = () => {
           {/* Mobile Menu - Collapsible */}
           <div className={`${isMenuOpen ? 'max-h-60' : 'max-h-0'} overflow-hidden transition-all duration-300 ease-in-out`}>
             <nav className="flex flex-col space-y-4 mt-4 pb-4">
-              <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
+              <Link to="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 Home
-              </a>
-              {/* <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
-                Collections
-              </a> */}
-              <a href="/About" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
+              </Link>
+              
+              <Link to="/About" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 About
-              </a>
-              <a href="/Contact" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
+              </Link>
+              <Link to="/Contact" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 Contact
-              </a>
+              </Link>
              <Link to="/Cart" className="relative font-['Cormorant Garamond'] flex items-center justify-center gap-2 text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
   <FiShoppingCart size={20} />
   Cart
@@ -71,12 +69,10 @@ const Header = () => {
         {/* Medium and Large Screen Layout */}
         <div className="hidden md:flex md:items-center md:justify-between">
           <nav className="flex space-x-6 lg:space-x-12 w-1/3">
-            <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
+            <Link to="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
               Home
-            </a>
-            {/* <a href="/" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
-              Collections
-            </a> */}
+            </Link>
+            
           </nav>
 
           <div className="flex items-center justify-center w-1/3">
@@ -86,12 +82,12 @@ const Header = () => {
           </div>
           
           <nav className="flex space-x-6 lg:space-x-12 w-1/3 justify-end">
-            <a href="/About" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
+            <Link to="/About" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
               About
-            </a>
-            <a href="/Contact" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
+            </Link>
+            <Link to="/Contact" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200">
               Contact
-            </a>
+            </Link>
              <Link to="/Cart" className="relative text-oliveGreen hover:text-coffeeDeep/80 transition-colors duration-200">
   <FiShoppingCart size={24} />
   {getCartItemsCount() > 0 && (

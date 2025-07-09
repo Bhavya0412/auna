@@ -5,7 +5,7 @@ import ScrollToTop from "react-scroll-to-top";
 
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import HomeCards from './pages/Home';
+
 import Footer from './components/Footer';
 import ShippingPoliciesPage from './pages/Shipping';
 import CareInstructionsPage from './pages/Care';
@@ -17,6 +17,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Cart from './pages/Cart';
 import { CartProvider } from './context/CartContext';
+import Home from './pages/Home';
 
 
 const App = () => {
@@ -38,7 +39,7 @@ const App = () => {
 
 const MainContent = () => {
   const location = useLocation();
-  const hideNavbarRoutes = ["/About", "/Contact", "/shipping_policies", "/Care_instructions","/Faqs","/shipping_policies","/TermsAndConditions", "/Cart"]; // Hide Navbar on About, Contact, Shipping Policies, and Care Instructions pages
+  const hideNavbarRoutes = ["/About", "/Contact", "/shipping_policies", "/Care_instructions","/Faqs","/shipping_policies","/TermsAndConditions", "/Cart"]; //hide the coffee arc navbar on these routes
 
   return (
     <div className="bg-white dark:bg-darkBg min-h-screen">
@@ -46,7 +47,7 @@ const MainContent = () => {
       {!hideNavbarRoutes.includes(location.pathname) && <Navbar />} 
 
       <Routes>
-        <Route path="/" element={<HomeCards />} />
+        <Route path="/" element={<Home />} />
         <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/Contact" element={<Contact />} />
