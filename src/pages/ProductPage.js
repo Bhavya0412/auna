@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShareAlt, faShoppingCart, faEye } from "@fortawesome/free-solid-svg-icons";
+import { faShareAlt, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "../context/CartContext";
 import { motion } from "framer-motion";
 
@@ -20,70 +20,59 @@ const ProductPage = () => {
   const isInCart = cartItems.some(item => item.id === id);
   const cartItem = cartItems.find(item => item.id === id);
 
-  useEffect(() => {
-    // Simulate fetching product data
-    fetch("/data/product.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const allCategories = ["the_coffee_arc"];
-        let foundProduct = null;
+    const fetchProduct = useCallback(async () => {
+    try {
+      const res = await fetch("/data/product.json");
+      const data = await res.json();
+      const categories = ["the_coffee_arc"];
 
-        for (let category of allCategories) {
-          if (data[category]) {
-            foundProduct = data[category].find((p) => p.id === id);
-            if (foundProduct) break;
+      for (let category of categories) {
+        if (data[category]) {
+          const found = data[category].find(p => p.id === id);
+          if (found) {
+            const main = found.img_path || "";
+            const images = [main, ...(found.additional_images || []).filter(img => img !== main)];
+            setProduct({ ...found, additional_images: images });
+            setSelectedImage(main);
+            break;
           }
         }
-
-        if (foundProduct) {
-          const mainImage = foundProduct.img_path || "";
-          const additionalImages = foundProduct.additional_images || [];
-          const allImages = [mainImage, ...additionalImages.filter((img) => img !== mainImage)];
-
-          setProduct({ ...foundProduct, additional_images: allImages });
-          setSelectedImage(mainImage);
-        }
-
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error loading product:", error);
-        setLoading(false);
-      });
+      }
+    } catch (error) {
+      console.error("Error loading product:", error);
+    } finally {
+      setLoading(false);
+    }
   }, [id]);
 
-  // Update WhatsApp URL when product is available
+  useEffect(() => {
+    fetchProduct();
+  }, [fetchProduct]);
+
   useEffect(() => {
     if (product) {
-      const whatsappMsg = `${window.location.href}
-Hello, I hope you're doing well! 
-I am interested in the ${product.name} at Rs. ${product.display_price}.
-Size: ${product.size}  
-I found this on the Auna website and would love to know more details.`;
-
-      setWhatsappURL(`https://wa.me/919967425691?text=${encodeURIComponent(whatsappMsg)}`);
+      const msg = `${window.location.href}\nHello, I hope you're doing well! \nI am interested in the ${product.name} at Rs. ${product.display_price}.\nSize: ${product.size}\nI found this on the Auna website and would love to know more details.`;
+      setWhatsappURL(`https://wa.me/919967425691?text=${encodeURIComponent(msg)}`);
     }
   }, [product]);
 
   const handleAddToCart = () => {
     if (!product) return;
-    
     setIsAdding(true);
     addToCart(product, 1);
-    
-    // Show feedback animation
-    setTimeout(() => {
-      setIsAdding(false);
-    }, 1000);
+    setTimeout(() => setIsAdding(false), 1000);
   };
 
- 
+  const handleInstagramInquiry = () => {
+    const msg = `${window.location.href}\nHello, I hope you're doing well! \nI am interested in the ${product.name} at Rs. ${product.display_price}.\nSize: ${product.size}\nI found this on the Auna website and would love to know more details.`;
+    navigator.clipboard.writeText(msg).then(() => {
+      alert("Message copied! Redirecting to Instagram.");
+      window.open("https://www.instagram.com/direct/t/17845145331390942", "_blank");
+    });
+  };
+
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <div className="animate-pulse text-coffeeDeep">Loading product...</div>
-      </div>
-    );
+    return <div className="flex justify-center items-center h-64 animate-pulse text-coffeeDeep">Loading product...</div>;
   }
 
   if (!product) {
@@ -94,23 +83,6 @@ I found this on the Auna website and would love to know more details.`;
       </div>
     );
   }
-  
-  const handleInstagramInquiry = () => {
-    const message = `${window.location.href}
-  Hello, I hope you're doing well! 
-  I am interested in the ${product.name} at Rs. ${product.display_price}.
-  Size: ${product.size}
-  I found this on the Auna website and would love to know more details.`;
-  
-    // Copy to clipboard
-    navigator.clipboard.writeText(message).then(() => {
-      alert("Message copied to clipboard! You'll be redirected to Instagram now. Just paste it in the chat.");
-      // Open Instagram chat (replace with actual thread or profile link)
-      window.open("https://www.instagram.com/direct/t/17845145331390942", "_blank");
-    }).catch((err) => {
-      console.error("Failed to copy message: ", err);
-    });
-  };
 
   return (
     <section className="py-16 bg-white text-coffeeDeep">
@@ -119,7 +91,7 @@ I found this on the Auna website and would love to know more details.`;
           {/* Image Gallery Section */}
           <div className="relative">
             <div className="mb-6 rounded-lg overflow-hidden shadow-md border border-coffeeTan">
-              <img src={selectedImage} alt={product.name} className="w-full h-auto object-cover" />
+              <img src={selectedImage} alt={product.name} className="w-full h-auto object-cover" loading="lazy"/>
             </div>
             <div className="grid grid-cols-5 gap-3">
               {product.additional_images.map((img, i) => (
@@ -129,7 +101,7 @@ I found this on the Auna website and would love to know more details.`;
                   className={`cursor-pointer rounded-md overflow-hidden border-2 transition-all duration-300
                   ${selectedImage === img ? 'border-coffeeDeep' : 'border-coffeeTan opacity-70 hover:opacity-100'}`}
                 >
-                  <img src={img} alt={`${product.name} view ${i + 1}`} className="w-full h-full object-cover aspect-square" />
+                  <img src={img} alt={`${product.name} view ${i + 1}`} className="w-full h-full object-cover aspect-square" loading="lazy"/>
                 </div>
               ))}
             </div>

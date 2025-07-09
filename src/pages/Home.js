@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, lazy,useEffect, useState,memo } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useNavigate } from "react-router-dom"; 
 import { useCart } from '../context/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faEye, faCheck } from '@fortawesome/free-solid-svg-icons';
-import InstagramFollowSection from '../components/InstagramFollowSection';
+const InstagramFollowSection = lazy(() => import('../components/InstagramFollowSection'));
 
-const ProductCard = ({ id, name, description, display_price, og_price, img_path, isReversed, index, product }) => {
+
+const ProductCard = memo(({ id, name, description, display_price, og_price, img_path, isReversed, index, product }) => {
   const controls = useAnimation();
   const navigate = useNavigate();
   const { addToCart, cartItems } = useCart();
@@ -27,17 +28,12 @@ const ProductCard = ({ id, name, description, display_price, og_price, img_path,
 
   const handleAddToCart = () => {
   if (!product) return;
-
   setIsAdding(true);
   addToCart(product, 1); // Always add 1, even if it already exists
-
   setTimeout(() => {
     setIsAdding(false);
   }, 1000);
 };
-
-
-  
 
   useEffect(() => {
     if (inView) {
@@ -56,8 +52,8 @@ const ProductCard = ({ id, name, description, display_price, og_price, img_path,
       y: 0,
       x: 0,
       transition: { 
-        duration: 0.8, 
-        delay: index * 0.2,
+        duration: 0.5, 
+        delay: index * 0.1,
         ease: "easeOut" 
       }
     }
@@ -74,15 +70,15 @@ const ProductCard = ({ id, name, description, display_price, og_price, img_path,
                  transition-shadow duration-300 max-w-6xl mx-auto border-2 border-coffeeTan`}
     >
       <motion.div 
-        className="md:w-1/2 overflow-hidden relative group"
+        className="md:w-1/2 overflow-hidden relative h-100"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}
       >
         <img 
           src={img_path} 
           alt={name} 
-          loading="lazy"
-          className="w-full h-full object-cover object-center"
+          loading='lazy'
+          className="w-full object-cover mt-[-70px]"
         />
         
         {/* Quick Action Overlay */}
@@ -90,7 +86,7 @@ const ProductCard = ({ id, name, description, display_price, og_price, img_path,
         </div>
       </motion.div>
       
-      <div className="md:w-1/2 p-8 flex flex-col justify-center">
+      <div className="md:w-1/2 p-8 flex flex-col justify-center ">
         <motion.h3 
           className="text-4xl font-serif mb-2 text-coffeeDeep cursor-pointer"
           onClick={() => openProductPage(id)}
@@ -153,7 +149,7 @@ const ProductCard = ({ id, name, description, display_price, og_price, img_path,
       </div>
     </motion.div>
   );
-};
+});
 
 const Hero = () => {
   const controls = useAnimation();
@@ -196,7 +192,10 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   
   useEffect(() => {
-    // Fetch the product data from the JSON file
+    const cached = localStorage.getItem('product_data');
+    if (cached) {
+      setProducts(JSON.parse(cached));
+    } else{
     fetch('/data/Product.json')
       .then(response => response.json())
       .then(data => {
@@ -209,6 +208,7 @@ const Home = () => {
       .catch(error => {
         console.error('Error loading product data:', error);
       });
+    }
   }, []);
 
   return (
@@ -232,7 +232,7 @@ const Home = () => {
           </div>
         </div>
         
-        <div className="space-y-24 mb-6">
+        <div className="space-y-24 mb-6 ">
           {products.map((product, index) => (
             <ProductCard
               key={product.id}
@@ -249,7 +249,9 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <InstagramFollowSection />  
+       <Suspense fallback={<div className="text-center py-4"></div>}>
+        <InstagramFollowSection />
+      </Suspense>
     </div>
   );
 };

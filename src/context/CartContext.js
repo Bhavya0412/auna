@@ -15,18 +15,7 @@ export const CartProvider = ({ children }) => {
 });
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Load cart from localStorage on mount
-  useEffect(() => {
-    try {
-      const savedCart = localStorage.getItem('cart');
-      if (savedCart) {
-        setCartItems(JSON.parse(savedCart));
-      }
-    } catch (error) {
-      console.error('Failed to parse cart from localStorage:', error);
-    }
-  }, []);
-
+  
   // Save cart to localStorage on change
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));

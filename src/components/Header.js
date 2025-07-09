@@ -15,7 +15,7 @@ const Header = () => {
     <header className="w-full bg-white py-4 px-4 md:py-6 md:px-8 shadow-sm sticky top-0 z-50 shadow-2xl">
       <div className="max-w-7xl mx-auto">
         {/* Mobile Layout */}
-        <div className="md:hidden">
+        <div className="md:hidden relative">
           <div className="flex items-center justify-between">
             {/* Hamburger Menu Button */}
             <button 
@@ -34,9 +34,17 @@ const Header = () => {
                 Auna
               </h1>
             </div>
-            
+            {/* Cart Icon Always Visible (Top Right Corner) */}
+    <Link to="/Cart" className="relative text-oliveGreen">
+      <FiShoppingCart size={24} />
+      {getCartItemsCount() > 0 && (
+        <span className="absolute -top-1 -right-2 bg-red-500 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
+          {getCartItemsCount()}
+        </span>
+      )}
+    </Link>
             {/* Empty div to balance the layout */}
-            <div className="w-6"></div>
+           
           </div>
           
           {/* Mobile Menu - Collapsible */}
@@ -52,15 +60,7 @@ const Header = () => {
               <Link to="/Contact" className="font-['Cormorant Garamond'] text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
                 Contact
               </Link>
-             <Link to="/Cart" className="relative font-['Cormorant Garamond'] flex items-center justify-center gap-2 text-oliveGreen text-lg font-semibold hover:text-coffeeDeep/80 transition-colors duration-200 text-center">
-  <FiShoppingCart size={20} />
-  Cart
-  {getCartItemsCount() > 0 && (
-    <span className="absolute -top-1 -right-4 bg-red-500 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
-      {getCartItemsCount()}
-    </span>
-  )}
-</Link>
+             
 
             </nav>
           </div>
