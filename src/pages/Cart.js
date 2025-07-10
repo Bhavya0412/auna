@@ -1,6 +1,6 @@
 // ✅ OPTIMIZED CART COMPONENT (with updated mobile layout and reduced height)
 
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import {  useMemo, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -56,20 +56,20 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white py-10">
+    <div className="min-h-screen bg-white py-11">
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-7"
         >
-          <h1 className="text-4xl font-serif text-coffeeDeep mb-4">Shopping Cart</h1>
+          <h1 className="text-4xl font-serif text-coffeeDeep -mt-6 mb-4">Shopping Cart</h1>
           <div className="w-24 h-1 bg-oliveGreen mx-auto mb-4"></div>
           <p className="text-lg text-mochaBrown">Review your selected items</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-5">
             {cartItems.map((item, index) => (
               <motion.div
@@ -130,7 +130,7 @@ const Cart = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-1 bg-beige border border-coffeeTan rounded-lg p-6 sticky top-4"
+            className="lg:col-span-1 bg-beige border  border-coffeeTan rounded-lg p-6 sticky top-4"
           >
             <h3 className="text-xl font-serif text-coffeeDeep mb-4 border-b border-coffeeTan pb-2">Order Summary</h3>
             <div className="space-y-3 mb-6">
@@ -143,18 +143,22 @@ const Cart = () => {
                 <span className="text-lg font-bold text-oliveGreen">Rs. {totalAmount.toFixed(2)}</span>
               </div>
             </div>
-
-            <div className="space-y-3">
-              <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="w-full bg-lime-900 hover:bg-lime-800 text-cream font-medium py-3 px-4 rounded-md block text-center">Enquire via WhatsApp</a>
-              <button onClick={handleInstagramInquiry} className="w-full bg-lime-900 hover:bg-lime-800 text-cream font-medium py-3 px-4 rounded-md text-center">Enquire via Instagram</button>
-            </div>
+            
+              <Link to="/shipping_policies" className="w-full bg-amber-900 hover:bg-amber-800 text-white font-medium py-2 px-4 rounded-md text-center flex items-center justify-center mb-2">
+                <FontAwesomeIcon icon={faShippingFast} className="mr-2" />
+                Shipping Rates & Policies
+              </Link>
+              
+            
 
             <div className="mt-6 pt-4 border-t border-coffeeTan">
+             
+              <div className="space-y-3">
+              <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="w-full bg-lime-900 hover:bg-lime-800 text-cream font-medium py-3 px-4 rounded-md block text-center">Enquire via WhatsApp</a>
+              <button onClick={handleInstagramInquiry} className="w-full bg-lime-900 hover:bg-lime-800 text-cream font-medium py-3 px-4 rounded-md text-center">Enquire via Instagram</button>
+              <div className="mt-6 pt-4 border-t border-coffeeTan"></div>
               <button onClick={() => navigate('/')} className="w-full bg-white text-coffeeDeep border-2 border-coffeeTan hover:bg-cream font-medium py-2 px-4 rounded-md text-center mb-3">Continue Shopping</button>
-              <Link to="/shipping_policies" className="w-full bg-amber-900 hover:bg-amber-800 text-white font-medium py-2 px-4 rounded-md text-center flex items-center justify-center">
-                <FontAwesomeIcon icon={faShippingFast} className="mr-2" />
-                Shipping Policies
-              </Link>
+            </div> 
             </div>
           </motion.div>
         </div>

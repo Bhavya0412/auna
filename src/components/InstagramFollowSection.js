@@ -387,7 +387,7 @@ const InstagramFollowSection = () => {
                 animate={isHovered ? { y: -1 } : {}}
                 transition={{ duration: 0.3 }}
               >
-                Discover our coffee themed sbags, sustainable stories, and brewing adventures on Instagram
+                Discover our coffee themed bags, sustainable stories, and brewing adventures on Instagram
               </motion.p>
             </motion.div>
 
