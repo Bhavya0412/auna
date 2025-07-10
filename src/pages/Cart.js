@@ -1,4 +1,3 @@
-// ✅ OPTIMIZED CART COMPONENT (with updated mobile layout and reduced height)
 
 import {  useMemo, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
@@ -15,12 +14,18 @@ const Cart = () => {
   const itemCount = useMemo(() => cartItems.reduce((sum, item) => sum + item.quantity, 0), [cartItems]);
 
   const message = useMemo(() => {
-    if (cartItems.length === 0) return '';
-    const details = cartItems.map(item =>
-      `${item.name} - Rs. ${item.display_price} x ${item.quantity} = Rs. ${item.display_price * item.quantity}`
-    ).join('\n');
-    return `Hello, I hope you're doing well!\n\nI am interested in the following products from your website:\n\n${details}\n\nTotal Amount: Rs. ${totalAmount.toFixed(2)}\n\nCart URL: ${window.location.href}`;
-  }, [cartItems, totalAmount]);
+  if (cartItems.length === 0) return '';
+
+  const details = cartItems.map(item =>
+    `${item.name} - Rs. ${item.display_price} x ${item.quantity} = Rs. ${(item.display_price * item.quantity).toFixed(2)}`
+  ).join('\n');
+
+  const uniqueProductLinks = [
+    ...new Set(cartItems.map(item => `https://yourdomain.com/The-Coffee-Arc/product/${item.id}`))
+  ].join('\n');
+
+  return `Hello, I hope you're doing well!\n\nI am interested in the following products from your website:\n\n${details}\n\nProduct Links:\n${uniqueProductLinks}\n\nTotal Amount: Rs. ${totalAmount.toFixed(2)}`;
+}, [cartItems, totalAmount]);
 
   const whatsappURL = useMemo(() =>
     `https://wa.me/919967425691?text=${encodeURIComponent(message)}`,
