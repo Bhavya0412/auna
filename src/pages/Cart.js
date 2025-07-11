@@ -69,7 +69,7 @@ const Cart = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-7"
         >
-          <h1 className="text-4xl font-serif text-coffeeDeep -mt-6 mb-4">Shopping Cart</h1>
+          <h1 className="text-3xl font-serif text-coffeeDeep -mt-6 mb-3">Shopping Cart</h1>
           <div className="w-24 h-1 bg-oliveGreen mx-auto mb-4"></div>
           <p className="text-lg text-mochaBrown">Review your selected items</p>
         </motion.div>
@@ -92,11 +92,14 @@ const Cart = () => {
                   <div className="flex-1 flex flex-col justify-between">
                     <div>
                       <h3 className="text-xl font-serif text-coffeeDeep mb-1">{item.name}</h3>
-                      <p className="text-mochaBrown text-sm mb-1">{item.description}</p>
+                      
                       <p className="text-sm text-darkolivegreen mb-2"><span className="font-medium">Size:</span> {item.size} cm</p>
                       <div className="flex items-center space-x-2">
                         <span className="text-lg font-semibold text-oliveGreen">Rs. {item.display_price}</span>
                         <span className="text-sm line-through text-mochaBrown opacity-70">Rs. {item.og_price}</span>
+                        <span className="text-sm text-oliveGreen opacity-80font-medium">
+    {Math.round(((item.og_price - item.display_price) / item.og_price) * 100)}% OFF
+  </span>
                       </div>
                     </div>
 
@@ -117,10 +120,10 @@ const Cart = () => {
                       </div>
                       <div className="flex gap-2">
                         <button onClick={() => handleViewDetails(item.id)} className="px-3 py-1 bg-oliveGreen text-white rounded-md hover:bg-darkolivegreen text-sm flex items-center">
-                          <FontAwesomeIcon icon={faEye} className="mr-1" /> View
+                           View
                         </button>
                         <button onClick={() => removeFromCart(item.id)} className="px-3 py-1 bg-yellow-900 text-white rounded-md hover:bg-yellow-800 text-sm flex items-center">
-                          <FontAwesomeIcon icon={faTrash} className="mr-1" /> Remove
+                          Remove
                         </button>
                       </div>
                     </div>

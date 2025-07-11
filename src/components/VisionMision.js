@@ -17,12 +17,12 @@ const VisionMission = () => {
         >
           <div className={`absolute inset-0 w-full h-full transition-transform duration-700 transform-style-preserve-3d ${activeCard !== 'vision' ? 'rotate-y-180' : ''}`}>
             {/* Front Face */}
-            <div className="absolute inset-0 w-full h-full bg-[#3E4A26] text-white p-6 rounded-lg shadow-lg backface-hidden transform transition-all duration-300 hover:shadow-xl">
-              <h2 className="text-3xl md:text-3xl font-serif mb-4 text-center text-white flex items-center justify-center gap-2 tracking-wide">
+            <div className="absolute inset-0 w-full h-full bg-[#3E4A26] text-white p-6 rounded-lg shadow-lg backface-hidden transform transition-all duration-300 hover:shadow-xl overflow-hidden">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-serif mb-4 text-center text-white flex items-center justify-center gap-2 tracking-wide">
                 <Eye className="w-6 h-6" />
                 Our Vision
               </h2>
-              <p className="text-s md:text-base leading-relaxed text-lg text-justify">
+              <p className="text-sm sm:text-base md:text-lg leading-relaxed text-justify">
                 We see Auna as more than just a brand—it's a reflection of our journey, passion, and creativity. Our vision is to build a space where fashion meets individuality, where every collection feels exclusive, and where timeless design meets everyday luxury. We want Auna to be the go-to brand for those who appreciate elegance with a story behind it. As we grow, our goal is to keep creating unique, high-quality pieces that feel special, personal, and effortlessly stylish.
               </p>
             </div>
@@ -48,12 +48,12 @@ const VisionMission = () => {
         >
           <div className={`absolute inset-0 w-full h-full transition-transform duration-700 transform-style-preserve-3d ${activeCard !== 'mission' ? 'rotate-y-180' : ''}`}>
             {/* Front Face */}
-            <div className="absolute inset-0 w-full h-full bg-[#3E4A26] text-white p-6 rounded-lg shadow-lg backface-hidden transform transition-all duration-300 hover:shadow-xl">
-              <h2 className="text-3xl md:text-3xl font-serif mb-4 text-center text-white flex items-center justify-center gap-2 tracking-wide">
+            <div className="absolute inset-0 w-full h-full bg-[#3E4A26] text-white p-6 rounded-lg shadow-lg backface-hidden transform transition-all duration-300 hover:shadow-xl overflow-hidden">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-serif mb-4 text-center text-white flex items-center justify-center gap-2 tracking-wide">
                 <Target className="w-6 h-6" />
                 Our Mission
               </h2>
-              <p className=" md:text-base leading-relaxed text-lg text-justify">
+              <p className="text-sm sm:text-base md:text-lg leading-relaxed text-justify">
                 At Auna, our mission is simple: to make luxury accessible. We believe that style should never be compromised by price, and elegance should be effortless. Every Auna bag is designed with timeless appeal, high-quality craftsmanship, and a story behind it. Our goal is to bring exclusive, thoughtfully curated collections that speak to your style and personality.
               </p>
             </div>

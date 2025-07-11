@@ -7,7 +7,7 @@ const AboutSection = () => {
   return (
     <div className="w-full max-w-[60rem] mx-auto mb-12">
       <div className="bg-[#3E4A26] text-white p-6 md:p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
-        <h1 className="text-3xl md:text-4xl font-serif mb-4 md:mb-6 text-center text-white tracking-wide">
+        <h1 className="text-2xl md:text-3xl font-serif mb-4 md:mb-6 text-center text-white tracking-wide">
            <Typewriter
             words={['About Us']}
             loop={false}

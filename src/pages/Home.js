@@ -88,7 +88,7 @@ const ProductCard = memo(({ id, name, description, display_price, og_price, img_
       
       <div className="md:w-1/2 p-8 flex flex-col justify-center ">
         <motion.h3 
-          className="text-4xl font-serif mb-2 text-coffeeDeep cursor-pointer"
+          className="text-3xl sm:text-3xl md:text-4xl font-serif mb-2 text-coffeeDeep cursor-pointer"
           onClick={() => openProductPage(id)}
           whileHover={{ scale: 1.05, color: '#5C6147' }}
           transition={{ duration: 0.2 }}
@@ -96,19 +96,22 @@ const ProductCard = memo(({ id, name, description, display_price, og_price, img_
           {name}
         </motion.h3>
         <div className="w-16 h-1 bg-oliveGreen mb-4"></div>
-        <p className="text-darkolivegreen mb-6 text-xl leading-relaxed">{description}</p>
+        <p className="text-darkolivegreen mb-6 text-lg sm:text-lg md:text-xl leading-relaxed">{description}</p>
         
         <div className="flex items-center space-x-2 mb-4">
           <span className="text-xl font-semibold text-mochaBrown line-through opacity-60">
             ₹{(og_price).toFixed(2)}
           </span>
           <span className="text-2xl font-bold text-oliveGreen">₹{(display_price).toFixed(2)}</span>
+          <span className="text-sm text-oliveGreen opacity-80 font-medium">
+    {Math.round(((og_price - display_price) / og_price) * 100)}% OFF
+  </span>
           
         </div>
 
         {/* Show cart status */}
         {isInCart && (
-          <div className="bg-amber-100 border border-amber-900 text-amber-900 px-2 py-2 rounded-md mb-5 text-sm max-w-xs">
+          <div className="bg-amber-100 border border-amber-900 text-amber-900 px-2 py-2 rounded-md mb-3 text-sm max-w-xs">
             <FontAwesomeIcon icon={faCheck} className="mr-2" />
             Added to cart
           </div>
@@ -120,31 +123,29 @@ const ProductCard = memo(({ id, name, description, display_price, og_price, img_
           transition={{ duration: 0.2 }}
         >
           <motion.button 
-            className="px-6 py-2 bg-oliveGreen text-white rounded-md hover:bg-darkolivegreen transition-colors duration-300"
-            onClick={() => openProductPage(id)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FontAwesomeIcon icon={faEye} className="mr-2" />
-            View Details
-          </motion.button>
+  className="text-sm sm:text-base md:text-lg px-6 py-2 bg-oliveGreen text-white rounded-md hover:bg-darkolivegreen transition-colors duration-300"
+  onClick={() => openProductPage(id)}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+>
+  View Details
+</motion.button>
+
           
-          {
-            <motion.button 
-              className={`px-6 py-2 rounded-md transition-colors duration-300 ${
-                isAdding 
-                  ? 'bg-coffeeTan text-white' 
-                  : 'bg-coffeeDeep text-white hover:bg-coffeeDeep'
-              }`}
-              onClick={handleAddToCart}
-              disabled={isAdding}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
-              {isAdding ? 'Added!' : 'Add to Cart'}
-            </motion.button>
-          }
+          <motion.button 
+  className={`text-sm sm:text-base md:text-lg px-6 py-2 rounded-md transition-colors duration-300 ${
+    isAdding 
+      ? 'bg-coffeeTan text-white' 
+      : 'bg-coffeeDeep text-white hover:bg-coffeeDeep'
+  }`}
+  onClick={handleAddToCart}
+  disabled={isAdding}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+>
+  {isAdding ? 'Added!' : 'Add to Cart'}
+</motion.button>
+          
         </motion.div>
       </div>
     </motion.div>
@@ -222,7 +223,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-3xl font-['Cormorant Garamond'] font-bold text-center text-coffeeDeep mb-0 mt-2"
+              className="text-3xl sm:text-3xl md:text-3xl font-['Cormorant Garamond'] font-bold text-center text-coffeeDeep mb-0 mt-2"
             >
               Our Signature Collection
             </motion.h2>
