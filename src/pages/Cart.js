@@ -10,7 +10,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
 
-  const totalAmount = useMemo(() => getCartTotal(), [cartItems, getCartTotal]);
+  const totalAmount = useMemo(() => getCartTotal(), [getCartTotal]);
   const itemCount = useMemo(() => cartItems.reduce((sum, item) => sum + item.quantity, 0), [cartItems]);
 
   const message = useMemo(() => {
