@@ -3,12 +3,12 @@ import {  useMemo, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faMinus, faTrash, faEye, faShoppingCart, faShippingFast } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faMinus,faShoppingCart, faShippingFast } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
 const Cart = () => {
   const navigate = useNavigate();
-  const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
+  const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
 
   const totalAmount = useMemo(() => getCartTotal(), [cartItems, getCartTotal]);
   const itemCount = useMemo(() => cartItems.reduce((sum, item) => sum + item.quantity, 0), [cartItems]);

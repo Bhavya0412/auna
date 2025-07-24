@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { useNavigate } from "react-router-dom"; 
 import { useCart } from '../context/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faEye, faCheck } from '@fortawesome/free-solid-svg-icons';
+import {faCheck } from '@fortawesome/free-solid-svg-icons';
 const InstagramFollowSection = lazy(() => import('../components/InstagramFollowSection'));
 
 
