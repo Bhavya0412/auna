@@ -21,7 +21,7 @@ const Cart = () => {
   ).join('\n');
 
   const uniqueProductLinks = [
-    ...new Set(cartItems.map(item => `https://yourdomain.com/The-Coffee-Arc/product/${item.id}`))
+    ...new Set(cartItems.map(item => `https://aunabags.com/The-Coffee-Arc/product/${item.id}`))
   ].join('\n');
 
   return `Hello, I hope you're doing well!\n\nI am interested in the following products from your website:\n\n${details}\n\nProduct Links:\n${uniqueProductLinks}\n\nTotal Amount: Rs. ${totalAmount.toFixed(2)}`;
