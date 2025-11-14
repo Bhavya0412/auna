@@ -1,61 +1,114 @@
 {
   "the_coffee_arc": [
-      {
-          "id": "tca01",
-          "name": "Latte",
-          "og_price": 1499,
-          "display_price": 1099,
-          "description": "Soft. Neutral. Effortless",
-          "product_detail": "This Latte-hued bag is a perfect blend of minimal elegance and everyday versatility. Inspired by the warmth of your favorite brew, it's designed to complement any look effortlessly.",
-          "img_path": "/assets/the-coffee-arc/beige_bag_cover.JPG",
-          "additional_images": [
-            "/assets/the-coffee-arc/beige_bag_cover.JPG",
-            "/bestsellers/beige_pic2.JPG",
-            "/bestsellers/beige_pic3.JPG",
-            "/bestsellers/all_bags1.JPG",
-            "/bestsellers/all_bags2.JPG"
-          ],
-          "fabric": "faux leather",
-          "size": "31 x 24 x 7",
-          "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
-      },
-      {
-          "id": "tca02",
-          "name": "Mocha",
-          "og_price": 1499,
-          "display_price": 1099,
-          "description": "Warm. Chic. Effortless.",
-          "product_detail": "Rich and versatile, the Mocha bag is the perfect balance of elegance and everyday charm. Inspired by the comforting hues of your favorite coffee, it's designed to pair seamlessly with any look.",
-          "img_path": "/assets/the-coffee-arc/brown_bag_cover.JPG",
-          "additional_images": [
-            "/assets/the-coffee-arc/brown_bag_cover.JPG",
-            "/bestsellers/brown_pic2.JPG",
-            "/bestsellers/brown_pic3.JPG",
-            "/bestsellers/all_bags1.JPG",
-            "/bestsellers/all_bags2.JPG"
-          ],
-          "fabric": "faux leather",
-          "size": "31 x 24 x 7",
-          "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
-      },
-      {
-          "id": "tca03",
-          "name": "Espresso",
-          "og_price": 1499,
-          "display_price": 799,
-          "description": "Bold. Sleek. Timeless.",
-          "product_detail": "Deep, rich, and effortlessly classic—the Espresso bag is a statement of confidence and sophistication. Inspired by the boldness of your favorite brew, it's the perfect go-to for any occasion.",
-          "img_path": "/assets/the-coffee-arc/black_bag_cover.JPG",
-          "additional_images": [
-              "/assets/the-coffee-arc/black_bag_cover.JPG",
-              "/bestsellers/black_pic2.JPG",
-              "/bestsellers/black_pic3.JPG",
-              "/bestsellers/all_bags1.JPG",
-              "/bestsellers/all_bags2.JPG"
-          ],
-          "fabric": "faux leather",
-          "size": "31 x 24 x 7",
-          "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
-      }
+    {
+      "id": "tca01",
+      "name": "Latte",
+      "og_price": 1499,
+      "display_price": 1099,
+      "description": "Soft. Neutral. Effortless",
+      "product_detail": "This Latte-hued bag is a perfect blend of minimal elegance and everyday versatility. Inspired by the warmth of your favorite brew, it's designed to complement any look effortlessly.",
+      "img_path": "/assets/the-coffee-arc/beige_bag_cover.JPG",
+      "additional_images": [
+        "/assets/the-coffee-arc/beige_bag_cover.JPG",
+        "/bestsellers/beige_pic2.JPG",
+        "/bestsellers/beige_pic3.JPG",
+        "/bestsellers/all_bags1.JPG",
+        "/bestsellers/all_bags2.JPG"
+      ],
+      "fabric": "faux leather",
+      "size": "31 x 24 x 7",
+      "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
+    },
+    {
+      "id": "tca02",
+      "name": "Mocha",
+      "og_price": 1499,
+      "display_price": 1099,
+      "description": "Warm. Chic. Effortless.",
+      "product_detail": "Rich and versatile, the Mocha bag is the perfect balance of elegance and everyday charm. Inspired by the comforting hues of your favorite coffee, it's designed to pair seamlessly with any look.",
+      "img_path": "/assets/the-coffee-arc/brown_bag_cover.JPG",
+      "additional_images": [
+        "/assets/the-coffee-arc/brown_bag_cover.JPG",
+        "/bestsellers/brown_pic2.JPG",
+        "/bestsellers/brown_pic3.JPG",
+        "/bestsellers/all_bags1.JPG",
+        "/bestsellers/all_bags2.JPG"
+      ],
+      "fabric": "faux leather",
+      "size": "31 x 24 x 7",
+      "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
+    },
+    {
+      "id": "tca03",
+      "name": "Espresso",
+      "og_price": 1499,
+      "display_price": 799,
+      "description": "Bold. Sleek. Timeless.",
+      "product_detail": "Deep, rich, and effortlessly classic—the Espresso bag is a statement of confidence and sophistication. Inspired by the boldness of your favorite brew, it's the perfect go-to for any occasion.",
+      "img_path": "/assets/the-coffee-arc/black_bag_cover.JPG",
+      "additional_images": [
+        "/assets/the-coffee-arc/black_bag_cover.JPG",
+        "/bestsellers/black_pic2.JPG",
+        "/bestsellers/black_pic3.JPG",
+        "/bestsellers/all_bags1.JPG",
+        "/bestsellers/all_bags2.JPG"
+      ],
+      "fabric": "faux leather",
+      "size": "31 x 24 x 7",
+      "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
+    }
+  ],
+  "the_malibu_collection": [
+    {
+      "id": "tmc01",
+      "name": "Sunset",
+      "og_price": 1599,
+      "display_price": 999,
+      "description": "Vibrant. Fresh. Coastal.",
+      "product_detail": "Inspired by the vibrant hues of a Malibu sunset, this bag brings a fresh, coastal vibe to your collection. Perfect for sunny days and breezy evenings.",
+      "img_path": "./assets/the-malibu-collection/sunset_cover.JPG",
+      "additional_images": [
+        "/assets/the-malibu-collection/sunset_cover.JPG",
+        "/assets/the-malibu-collection/sunset_pic2.JPG",
+        "/assets/the-malibu-collection/sunset_pic3.JPG"
+      ],
+      "fabric": "faux leather",
+      "size": "31 x 24 x 7",
+      "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
+    },
+    {
+      "id": "tmc02",
+      "name": "Ocean",
+      "og_price": 1599,
+      "display_price": 999,
+      "description": "Calm. Cool. Deep.",
+      "product_detail": "Reflecting the serene beauty of the Pacific, the Ocean bag is your new go-to for calm, cool, and collected style. A versatile piece for any wardrobe.",
+      "img_path": "/assets/the-malibu-collection/ocean_cover.JPG",
+      "additional_images": [
+        "/assets/the-malibu-collection/ocean_cover.JPG",
+        "/assets/the-malibu-collection/ocean_pic2.JPG",
+        "/assets/the-malibu-collection/ocean_pic3.JPG"
+      ],
+      "fabric": "faux leather",
+      "size": "31 x 24 x 7",
+      "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
+    },
+    {
+      "id": "tmc03",
+      "name": "Sand",
+      "og_price": 1599,
+      "display_price": 999,
+      "description": "Natural. Earthy. Timeless.",
+      "product_detail": "Echoing the natural, earthy tones of the shore, the Sand bag is a timeless neutral. Its understated elegance makes it an essential for any minimalist wardrobe.",
+      "img_path": "/assets/the-malibu-collection/sand_cover.JPG",
+      "additional_images": [
+        "/assets/the-malibu-collection/sand_cover.JPG",
+        "/assets/the-malibu-collection/sand_pic2.JPG",
+        "/assets/the-malibu-collection/sand_pic3.JPG"
+      ],
+      "fabric": "faux leather",
+      "size": "31 x 24 x 7",
+      "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD."
+    }
   ]
 }

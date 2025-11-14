@@ -22,9 +22,9 @@ const ProductPage = () => {
 
     const fetchProduct = useCallback(async () => {
     try {
-      const res = await fetch("/data/product.json");
+      const res = await fetch("/data/Product.json");  // Fixed capitalization of Product.json
       const data = await res.json();
-      const categories = ["the_coffee_arc"];
+      const categories = ["the_coffee_arc", "the_malibu_collection"];  // Added Malibu collection
 
       for (let category of categories) {
         if (data[category]) {

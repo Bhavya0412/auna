@@ -1,15 +1,22 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-oliveGreen py-3 px-8 shadow-sm border-b border-olive-dark">
-      <div className="max-w-7xl mx-auto flex justify-center items-center">
-        <h1 className="font-openSans text-white text-3xl font-bold text-center">
-          
+    <nav className="mt-0 w-full bg-oliveGreen py-3 px-8 shadow-sm border-b border-olive-dark">
+      <div className="max-w-7xl mx-auto flex justify-center items-center gap-x-  md:gap-x-48">
+        <Link
+          to="/The-Coffee-Arc"
+          className="font-openSans text-white text-xl md:text-3xl font-bold text-center hover:text-white/80 transition-colors duration-200"
+        >
           The Coffee Arc
-           
-        </h1>
+        </Link>
+        <Link
+          to="/The-Malibu-Collection"
+          className="font-openSans text-white text-xl md:text-3xl font-bold text-center hover:text-white/80 transition-colors duration-200"
+        >
+          The Malibu Collection
+        </Link>
       </div>
     </nav>
   );
