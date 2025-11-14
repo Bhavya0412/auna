@@ -45,6 +45,7 @@ const MainContent = () => {
   const hideNavbarRoutes = ["/About", "/Contact", "/shipping_policies", "/Care_instructions","/Faqs","/TermsAndConditions", "/PrivacyPolicy", "/Cart"]; 
 
   return (
+    <>
     <div className="flex flex-col flex-1">
       <Header />
       {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
@@ -66,8 +67,9 @@ const MainContent = () => {
         </Routes>
       </main>
 
-      <Footer />
     </div>
+      <Footer />
+</>
   );
 };
 
