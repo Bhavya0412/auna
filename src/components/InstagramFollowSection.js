@@ -225,7 +225,7 @@ const InstagramFollowSection = () => {
   );
 
   return (
-    <div className="pt-6 pb-3 smd:px-8 bg-white">
+    <div className="pt-6 pb-0 smd:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
