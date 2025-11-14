@@ -39,7 +39,7 @@ const ProductCard = memo(({ id, img_path, isReversed, index, collectionPath, col
     hidden: {
       opacity: 0,
       y: 50,
-      x: isReversed ? -50 : 50
+      x: isReversed ? -20 : 20
     },
     visible: {
       opacity: 1,
@@ -73,7 +73,7 @@ const ProductCard = memo(({ id, img_path, isReversed, index, collectionPath, col
           src={img_path}
           alt={collectionTitle} // Use collection title for alt text
           loading='lazy'
-          className="w-full object-cover mt-[-70px]"
+          className="w-full object-cover md:mt-[-70px]"
         />
 
         {/* Quick Action Overlay */}

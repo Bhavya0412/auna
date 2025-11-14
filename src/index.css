@@ -106,3 +106,6 @@ html {
   background: linear-gradient(135deg, #f5deb3, #deb887);
 }
 
+html, body {
+  overflow-x: hidden;
+}

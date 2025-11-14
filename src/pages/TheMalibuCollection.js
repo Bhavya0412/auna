@@ -46,7 +46,7 @@ const ProductCard = memo(({ id, name, description, display_price, og_price, img_
         hidden: {
             opacity: 0,
             y: 50,
-            x: isReversed ? -50 : 50
+            x: isReversed ? -20 : 20
         },
         visible: {
             opacity: 1,
