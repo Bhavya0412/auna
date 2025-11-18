@@ -33,7 +33,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-white py-0 px-0 md:py-6 md:px-8 shadow-sm fixed top-0 z-50 shadow-2xl">
+    <header className="w-full bg-white py-3 px-0 md:py-6 md:px-8 shadow-sm sticky top-0 z-50 shadow-2xl -mt-20 -mb-6">
       <div className="max-w-7xl mx-auto">
         {/* Mobile Layout */}
         <div className="md:hidden relative">
