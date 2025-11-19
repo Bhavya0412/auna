@@ -61,11 +61,11 @@
   "the_malibu_collection": [
     {
       "id": "tmc01",
-      "name": "Sunset",
+      "name": "Moonlight Bay",
       "og_price": 1599,
       "display_price": 1149,
-      "description": "Vibrant. Fresh. Coastal.",
-      "product_detail": "Inspired by the vibrant hues of a Malibu sunset, this bag brings a fresh, coastal vibe to your collection. Perfect for sunny days and breezy evenings.",
+      "description": "Cool. Modern. Effortless",
+      "product_detail": "Moonlight Bay captures the essence of evenings by the ocean—cool, airy, and soothing. The bluish-grey shade adds a polished, modern touch while staying subtle enough for daily wear. Designed to complement both casual and elevated outfits, it’s the perfect choice for anyone who loves understated luxury with a relaxed coastal vibe.",
       "img_path": "./assets/the-malibu-collection/sunset_cover.JPG",
       "additional_images": [
         "/assets/the-malibu-collection/sunset_cover.JPG",
@@ -78,11 +78,11 @@
     },
     {
       "id": "tmc02",
-      "name": "Moonlight Bay",
+      "name": "Coral Coast",
       "og_price": 1599,
       "display_price": 1149,
-      "description": "Cool. Modern. Effortless.",
-      "product_detail": "Moonlight Bay captures the essence of evenings by the ocean—cool, airy, and soothing. The bluish-grey shade adds a polished, modern touch while staying subtle enough for daily wear. Designed to complement both casual and elevated outfits, it’s the perfect choice for anyone who loves understated luxury with a relaxed coastal vibe.",
+      "description": "Vibrant. Playful. Sun-Kissed",
+      "product_detail": "The Coral Coast bag channels the spirit of warm sunsets and breezy coastal days. With its soft pink hue, it adds a touch of playful elegance to any outfit. Designed for everyday ease, it brings a perfect blend of charm and functionality—your ideal companion for days when you want your style to feel fresh, bright, and effortlessly confident.",
       "img_path": "/assets/the-malibu-collection/ocean_cover.JPG",
       "additional_images": [
         "/assets/the-malibu-collection/ocean_cover.JPG",
