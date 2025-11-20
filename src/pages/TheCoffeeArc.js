@@ -68,7 +68,7 @@ const ProductCard = memo(({ id, name, description, display_price, og_price, img_
             variants={cardVariants}
             className={`flex flex-col ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} 
                   rounded-lg overflow-hidden shadow-lg mb-16 bg-cream hover:shadow-xl 
-                  transition-shadow duration-300 max-w-6xl mx-auto border-2 border-coffeeTan`}
+                  transition-shadow duration-300 max-w-6xl mx-auto border-2 border-coffeeTan -mt-16`}
         >
             <motion.div
                 className="md:w-1/2 overflow-hidden relative h-100"

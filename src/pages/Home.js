@@ -185,7 +185,7 @@ const Home = () => {
       <Hero />
 
       {/* The Coffee Arc Section */}
-      <div id="the-coffee-arc" className="max-w-7xl mx-auto px-4 py-0">
+      <div id="the-coffee-arc" className="max-w-7xl mx-auto px-4 py-0 -mt-6">
         <div className="space-y-24 mb-6 ">
           {mochaProduct && (
             <ProductCard

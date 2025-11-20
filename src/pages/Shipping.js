@@ -20,7 +20,7 @@ const shippingPolicies = [
 ];
 const ShippingPoliciesPage = () => {
   return (
-    <div className="min-h-screen bg-white text-oliveGreen pt-8 p-4  -mt-16 flex items-center justify-center font-sans">
+    <div className="min-h-screen bg-white text-oliveGreen pt-8 p-4 -mt-64 md:-mt-8 flex items-center justify-center font-sans">
       <div className="max-w-3xl w-full">
         {/* Page Title */}
         <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4 text-center">Shipping Policies</h1>
