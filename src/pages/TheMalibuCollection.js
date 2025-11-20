@@ -71,7 +71,7 @@ const ProductCard = memo(({ id, name, description, display_price, og_price, img_
                   transition-shadow duration-300 max-w-6xl mx-auto border-2 border-coffeeTan`}
         >
             <motion.div
-                className="md:w-1/2 overflow-hidden relative h-100"
+                className="md:w-1/2 overflow-hidden relative h-100 "
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
             >
@@ -79,7 +79,7 @@ const ProductCard = memo(({ id, name, description, display_price, og_price, img_
                     src={img_path}
                     alt={name}
                     loading='lazy'
-                    className="w-full object-cover mt-[-70px]"
+                    className="w-full object-cover mt-[-70px] "
                 />
             </motion.div>
 
