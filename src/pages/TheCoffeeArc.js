@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from '../context/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import Navbar from '../components/Navbar'; // Import the Navbar
+// import Navbar from '../components/Navbar'; // Import the Navbar
 
 const InstagramFollowSection = lazy(() => import('../components/InstagramFollowSection'));
 

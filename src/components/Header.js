@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiShoppingCart, FiChevronDown } from 'react-icons/fi';
+import { FiShoppingCart } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
