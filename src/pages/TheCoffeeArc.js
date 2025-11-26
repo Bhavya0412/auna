@@ -10,7 +10,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 const InstagramFollowSection = lazy(() => import('../components/InstagramFollowSection'));
 
 // This is the detailed Product Card component for the collection page
-const ProductCard = memo(({ id, name, description, display_price, og_price, img_path, isReversed, index, product, collectionPath }) => {
+const ProductCard = memo(({ id, name, description, display_price, og_price, img_path, isReversed, index, product, collectionPath, stock_status }) => {
     const controls = useAnimation();
     const navigate = useNavigate();
     const { addToCart, cartItems } = useCart();
@@ -105,6 +105,13 @@ const ProductCard = memo(({ id, name, description, display_price, og_price, img_
                     </span>
                 </div>
 
+                {stock_status === '1 left' && (
+                    <p className="text-sm text-orange-600 font-medium mb-4">Only 1 left in stock!</p>
+                )}
+                {stock_status === 'sold out' && (
+                    <p className="text-sm text-red-600 font-medium mb-4">Sold Out</p>
+                )}
+
                 {isInCart && (
                     <div className="bg-amber-100 border border-amber-900 text-amber-900 px-2 py-2 rounded-md mb-3 text-sm max-w-xs">
                         <FontAwesomeIcon icon={faCheck} className="mr-2" />
@@ -129,14 +136,16 @@ const ProductCard = memo(({ id, name, description, display_price, og_price, img_
                     <motion.button
                         className={`text-sm sm:text-base md:text-lg px-6 py-2 rounded-md transition-colors duration-300 ${isAdding
                                 ? 'bg-coffeeTan text-white'
-                                : 'bg-coffeeDeep text-white hover:bg-coffeeDeep'
+                                : stock_status === 'sold out'
+                                    ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
+                                    : 'bg-coffeeDeep text-white hover:bg-coffeeDeep'
                             }`}
                         onClick={handleAddToCart}
-                        disabled={isAdding}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        disabled={isAdding || stock_status === 'sold out'}
+                        whileHover={stock_status !== 'sold out' ? { scale: 1.05 } : {}}
+                        whileTap={stock_status !== 'sold out' ? { scale: 0.95 } : {}}
                     >
-                        {isAdding ? 'Added!' : 'Add to Cart'}
+                        {stock_status === 'sold out' ? 'Sold Out' : isAdding ? 'Added!' : 'Add to Cart'}
                     </motion.button>
                 </motion.div>
             </div>
@@ -195,6 +204,7 @@ const TheCoffeeArc = () => {
                             index={index}
                             product={product}
                             collectionPath="The-Coffee-Arc" // Pass collection path
+                            stock_status={product.stock_status}
                         />
                     ))}
                 </div>
