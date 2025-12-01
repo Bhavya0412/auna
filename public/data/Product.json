@@ -18,7 +18,7 @@
       "fabric": "faux leather",
       "size": "31 x 24 x 7",
       "additional_details": "Sleek gold-tone hardware, an adjustable strap, and a lightweight design. An additional charge of Rs. 100 applies for COD.",
-      "stock_status": "1 left"
+      "stock_status": "sold out"
     },
     {
       "id": "tca02",
@@ -70,7 +70,7 @@
       "id": "tmc01",
       "name": "Moonlight Bay",
       "og_price": 1599,
-      "display_price": 899,
+      "display_price": 1149,
       "description": "Cool. Modern. Effortless",
       "product_detail": "Moonlight Bay captures the essence of evenings by the ocean—cool, airy, and soothing. The bluish-grey shade adds a polished, modern touch while staying subtle enough for daily wear. Designed to complement both casual and elevated outfits, it’s the perfect choice for anyone who loves understated luxury with a relaxed coastal vibe.",
       "img_path": "/assets/the-malibu-collection/sunset_cover.JPG",
@@ -87,7 +87,7 @@
       "id": "tmc02",
       "name": "Coral Coast",
       "og_price": 1599,
-      "display_price": 799,
+      "display_price": 1149,
       "description": "Vibrant. Playful. Sun-Kissed",
       "product_detail": "The Coral Coast bag channels the spirit of warm sunsets and breezy coastal days. With its soft pink hue, it adds a touch of playful elegance to any outfit. Designed for everyday ease, it brings a perfect blend of charm and functionality—your ideal companion for days when you want your style to feel fresh, bright, and effortlessly confident.",
       "img_path": "/assets/the-malibu-collection/ocean_cover.JPG",
@@ -104,7 +104,7 @@
       "id": "tmc03",
       "name": "White Coast",
       "og_price": 1599,
-      "display_price": 799,
+      "display_price": 1149,
       "description": "Clean. Classic. Timeless",
       "product_detail": "White Coast is inspired by serene shores and soft, calming waves. Its refined off-white tone pairs seamlessly with every look, making it your most versatile go-to piece. Minimal yet striking, this bag elevates your everyday style with quiet sophistication and a timeless aesthetic that never goes out of fashion.",
       "img_path": "/assets/the-malibu-collection/sand_cover.JPG",
