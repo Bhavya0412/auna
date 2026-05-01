@@ -22,7 +22,7 @@ const ProductPage = () => {
 
     const fetchProduct = useCallback(async () => {
     try {
-      const res = await fetch("/data/Product.json");  // Fixed capitalization of Product.json
+      const res = await fetch("/data/Product.json?v=" + new Date().getTime());
       const data = await res.json();
       const categories = ["the_coffee_arc", "the_malibu_collection"];  // Added Malibu collection
 

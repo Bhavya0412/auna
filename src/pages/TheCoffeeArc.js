@@ -160,16 +160,8 @@ const TheCoffeeArc = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                // Check cache first
-                const cached = localStorage.getItem('product_data');
-                let data;
-                if (cached) {
-                    data = JSON.parse(cached);
-                } else {
-                    const response = await fetch('/data/Product.json');
-                    data = await response.json();
-                    localStorage.setItem('product_data', JSON.stringify(data));
-                }
+                const response = await fetch('/data/Product.json?v=' + new Date().getTime());
+                let data = await response.json();
 
                 if (data.the_coffee_arc && Array.isArray(data.the_coffee_arc)) {
                     setProducts(data.the_coffee_arc);

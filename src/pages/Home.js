@@ -158,26 +158,12 @@ const Home = () => {
           console.error('Invalid data format for the_malibu_collection');
         }
 
-        localStorage.setItem('product_data', JSON.stringify(data));
-
       } catch (error) {
         console.error('Error loading product data:', error);
       }
     };
 
-    const cached = localStorage.getItem('product_data');
-    if (cached) {
-      const data = JSON.parse(cached);
-      if (data.the_coffee_arc && Array.isArray(data.the_coffee_arc)) {
-        const mocha = data.the_coffee_arc.find(p => p.name.toLowerCase() === 'mocha');
-        setMochaProduct(mocha);
-      }
-      if (data.the_malibu_collection && Array.isArray(data.the_malibu_collection)) {
-        setMalibuCollectionProducts(data.the_malibu_collection);
-      }
-    } else {
-      fetchData();
-    }
+    fetchData();
   }, []);
 
   return (

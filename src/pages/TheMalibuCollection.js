@@ -151,12 +151,11 @@ const TheMalibuCollection = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('/data/Product.json');
+                const response = await fetch('/data/Product.json?v=' + new Date().getTime());
                 const data = await response.json();
 
                 if (data.the_malibu_collection && Array.isArray(data.the_malibu_collection)) {
                     setProducts(data.the_malibu_collection);
-                    localStorage.setItem('product_data', JSON.stringify(data));
                 } else {
                     console.error('Invalid data format for the_malibu_collection');
                 }
